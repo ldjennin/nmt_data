@@ -1,7 +1,8 @@
+/*global NMTdata */
 var NMTdata = NMTdata || {}; // GLOBAL NMTdata object
 
 // IF: prevent multiple loads of NMTdata.ads
-if (typeof NMTdata.ads == 'undefined') {
+if (typeof NMTdata.ads === 'undefined') {
 
 NMTdata.ads = (function () {
 	// REQUIRES: NMTdata.data module to be loaded prior to this module.
@@ -14,31 +15,32 @@ NMTdata.ads = (function () {
 	var adunitMappings = [
 		{'\/community\/clay':'/community/clay'},
 		{'\/Dropbox\/':'dropbox'},
-		{'tealium-test-tag\.html':'airshow'}
+		{'tealium-test-tag.html':'airshow'}
 	];
 	var cccMappings = [
 		{'\/community\/clay':'clay'},
 		{'\/Dropbox\/':'dropbox'},
-		{'tealium-test-tag\.html':'airshow'}
+		{'tealium-test-tag.html':'airshow'}
 	];
 
 	///////////////////////////////////////////////
 	// dfp data
-	var dfp_adunit = '', // example: /11365842/jacksonville.com/autos
+	var i = 0,
+        dfp_adunit = '', // example: /11365842/jacksonville.com/autos
 		dfp_ccc = data.pathnames[data.pathnames.length-1]; // customTargeting value
 	
 	// build dfp_adunit value
-	for(var i=0,pathlength=data.pathnames.length;i<pathlength;i++) {
-		if (data.pathnames[i] != '') {
-			dfp_adunit += '/'+data.pathnames[i];
+	for (i = 0, pathlength=data.pathnames.length; i<pathlength; i++) {
+		if (data.pathnames[i] !== '') {
+			dfp_adunit += '/' + data.pathnames[i];
 		}
 	}
 
 	// set homepage adunit
-	if (data.pathnames[0] == '') { dfp_adunit = '/homepage'; }
+	if (data.pathnames[0] === '') { dfp_adunit = '/homepage'; }
 
 	// Process URL mappings for adunit
-	dfp_adunit = data.processURLMapping(adunitMappings,'');
+	dfp_adunit = data.processURLMapping(adunitMappings, '');
 
 	// Process URL mappings for adunit
 	dfp_ccc = data.processURLMapping(cccMappings,'');
@@ -47,7 +49,7 @@ NMTdata.ads = (function () {
 	{
 		var mmo_ccc = data.getQueryParam('mmo_ccc');
 		if (mmo_ccc !== undefined) { dfp_ccc = mmo_ccc; }
-	};
+	}
 
 
 
@@ -57,4 +59,4 @@ NMTdata.ads = (function () {
 	};
 })();
 
-}; // ENDIF: prevent multiple loads of NMTdata.ads
+} // ENDIF: prevent multiple loads of NMTdata.ads
