@@ -1,4 +1,9 @@
 // Setup NMT namespace and global object.
+/***
+ * Provides global data and methods for serving ads.
+ * @author: Duane.Jennings@niit-mediatech.com
+ * @version: 2013.09.01.$Revision$
+ */
 var NMT = NMT || {};
 NMT.namespace = function (name){
 	// @description: builds a namespace object

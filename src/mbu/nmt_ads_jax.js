@@ -3,6 +3,7 @@
  * Provides jacksonville data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
  * @version: 2013.09.01.$Revision$
+ * nmt_ads.js version: 2013.09.01.1306
  * 
  */
 var NMTdata = NMTdata || {};
