@@ -30,10 +30,10 @@ if (typeof NMTdata.data === 'undefined') {
                 }
             },
             processURLMapping: function (hMappings, defaultValue) {
-                var aBool = false, aValue = '', i = 0, f = null, g = null;
+                var aBool = false, aValue = defaultValue, i = 0, f = null, g = null;
                 for (i = 0; i < hMappings.length; i++) {
                     for (f in hMappings[i]) {
-                        if (hMappings.hasOwnProperty(i)) {
+                        if (hMappings[i].hasOwnProperty(f)) {
                             g = new RegExp(f, 'i');
                             if (g.test(document.URL)) {
                                 aValue = hMappings[i][f];
@@ -43,10 +43,10 @@ if (typeof NMTdata.data === 'undefined') {
                     }
                     if (aBool) { break; }
                 }
-                if (aBool) { return aValue; } else { return defaultValue; }
+                if (aBool) { return aValue; }
             },
             pathnames: pathnames // pathnames array
         };
-    })();
+    }());
 
 } // ENDIF: prevent multiple loads of NMTdata.data
