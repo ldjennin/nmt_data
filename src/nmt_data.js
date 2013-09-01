@@ -1,5 +1,10 @@
 /*global NMTdata,window*/
-var NMTdata = NMTdata || {}; // GLOBAL NMTdata object
+/***
+ * Provides global data and methods for serving ads.
+ * @author: Duane.Jennings@niit-mediatech.com
+ * @version: 2013.09.01
+ */
+var NMTdata = NMTdata || {};
 
 // IF: prevent multiple loads of NMTdata.data
 if (typeof NMTdata.data === 'undefined') {
@@ -8,9 +13,9 @@ if (typeof NMTdata.data === 'undefined') {
         // general data object methods and properties.
         console.log("NMTdata.data init");
 
-        var pathnames = [], // up to 9 pathnames
+        var pathnames = new Array(), // up to 9 pathnames
             a = window.location.pathname.split('/'),
-            b = (a.length > 9) ? 9 : a.length,
+            b = (a.length > 9) ? 9 : a.length-1,
             c = 0;
         a.shift();
 
@@ -29,8 +34,12 @@ if (typeof NMTdata.data === 'undefined') {
                     }
                 }
             },
-            processURLMapping: function (hMappings, defaultValue) {
+            processMapping: function (hMappings, matchAgainst, defaultValue) {
+            	/**
+            	 * Takes hMappings and tests RegExp against value in matchAgainst.
+            	 */
                 var aBool = false, aValue = defaultValue, i = 0, f = null, g = null;
+                console.log("processMapping called: " + matchAgainst);
                 for (i = 0; i < hMappings.length; i++) {
                     for (f in hMappings[i]) {
                         if (hMappings[i].hasOwnProperty(f)) {
@@ -38,12 +47,13 @@ if (typeof NMTdata.data === 'undefined') {
                             if (g.test(document.URL)) {
                                 aValue = hMappings[i][f];
                                 aBool = true;
+                                console.log("processMapping matched: " + f);
                             }
                         }
                     }
                     if (aBool) { break; }
                 }
-                if (aBool) { return aValue; }
+                return aValue;
             },
             pathnames: pathnames // pathnames array
         };

@@ -1,5 +1,11 @@
 /*global NMTdata */
-var NMTdata = NMTdata || {}; // GLOBAL NMTdata object
+/***
+ * Provides global data and methods for serving ads.
+ * @author: Duane.Jennings@niit-mediatech.com
+ * @requires: nmt_data.js
+ * @version: 2013.09.01
+ */
+var NMTdata = NMTdata || {};
 
 // IF: prevent multiple loads of NMTdata.ads
 if (typeof NMTdata.ads === 'undefined') {
@@ -8,44 +14,58 @@ if (typeof NMTdata.ads === 'undefined') {
         // REQUIRES: NMTdata.data module to be loaded prior to this module.
         // ads related methods and properties.
         console.log("NMTdata.ads init");
+        
         var data = NMTdata.data,
+        adunitPathMappings = new Array(),
+        adunitURLMappings = new Array(),
+        cccPathMappings = new Array(),
+        cccURLMappings = new Array(),
+        i = 0,
+        mmo_ccc = '',
+        pathlength = 0,
+        dfp_adunit = '', // example: /11365842/jacksonville.com/autos
+        dfp_ccc = ''; // customTargeting value
+       	
 
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
-            adunitMappings = [
-                {'\/community\/clay': '/community/clay'},
-                {'\/Dropbox\/': 'dropbox'},
-                {'tealium-test-tag.html': 'airshow'}
-            ],
-            cccMappings = [
-                {'\/community\/clay': 'clay'},
-                {'\/Dropbox\/': 'dropbox'},
-                {'tealium-test-tag.html': 'airshow'}
-            ],
+        adunitURLMappings = [
+                      ];
+        adunitPathMappings = [
+                              {'\/$': '/homepage'},
+                              {'\/community\/clay': '/community/clay'},
+                              {'\/(Dropbox|hello)\/': 'dropbox'},
+                              {'tealium-test-tag.html': 'airshow'}
+                      ];
+        cccURLMappings = [
+                   ];
+        cccPathMappings = [
+                           {'\/$': 'homepage'},
+                           {'\/community\/clay': 'clay'},
+                           {'\/(Dropbox|hello)\/': 'dropbox'},
+                           {'tealium-test-tag.html': 'airshow'}
+                   ];
 
-        ///////////////////////////////////////////////
-        // dfp data
-            i = 0,
-            mmo_ccc = null,
-            pathlength = 0,
-            dfp_adunit = '', // example: /11365842/jacksonville.com/autos
-            dfp_ccc = data.pathnames[data.pathnames.length - 1]; // customTargeting value
 
-        // build dfp_adunit value
+        // build dfp_adunit default value
         for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
                 dfp_adunit += '/' + data.pathnames[i];
             }
         }
 
-        // set homepage adunit
-        if (data.pathnames[0] === '') { dfp_adunit = '/homepage'; }
+        // Process Path mappings for dfp_adunit
+        dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
+        // Process URL mappings for dfp_adunit
+        dfp_adunit = data.processMapping(adunitURLMappings, document.URL, dfp_adunit);
 
-        // Process URL mappings for adunit
-        dfp_adunit = data.processURLMapping(adunitMappings, '');
-
-        // Process URL mappings for adunit
-        dfp_ccc = data.processURLMapping(cccMappings, '');
+        // dfp_ccc default value
+        dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        
+        // Process Path mappings for dfp_ccc
+        dfp_ccc = data.processMapping(cccPathMappings, window.location.pathname, dfp_ccc);
+        // Process URL mappings for dfp_ccc
+        dfp_ccc = data.processMapping(cccURLMappings, document.URL, dfp_ccc);
 
         // override dfp_ccc with query_string mmo_ccc
         mmo_ccc = data.getQueryParam('mmo_ccc');
