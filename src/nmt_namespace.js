@@ -11,6 +11,6 @@ NMT.namespace = function (name){
 		parent = parent[currentPart];
 	}
 	return parent;
-}
+};
 
 var NMTdata = NMT.namespace('NMT.data');

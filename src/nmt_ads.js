@@ -1,13 +1,13 @@
 /*global NMTdata */
 /***
- * Provides global data and methods for serving ads.
+ * Provides jacksonville data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @requires: nmt_data.js
- * @version: 2013.09.01
+ * @version: 2013.$Revision$
+ * 
  */
 var NMTdata = NMTdata || {};
 
-// IF: prevent multiple loads of NMTdata.ads
+// IF: prevent multiple loads of NMTdata.ads.jax
 if (typeof NMTdata.ads === 'undefined') {
 
     NMTdata.ads = (function () {
@@ -26,25 +26,36 @@ if (typeof NMTdata.ads === 'undefined') {
         dfp_adunit = '', // example: /11365842/jacksonville.com/autos
         dfp_ccc = ''; // customTargeting value
        	
-
+////////////////////////////////////////////////////////////////////////
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
         adunitURLMappings = [
+                             // Common mappings
+                             // MBU custom mappings
                       ];
         adunitPathMappings = [
+                              // Common mappings
                               {'\/$': '/homepage'},
-                              {'\/community\/clay': '/community/clay'},
-                              {'\/(Dropbox|hello)\/': 'dropbox'},
+                              {'\/cars$': '/autos'},
+                              {'\/cars\/': '/autos'},
+                              // MBU custom mappings
+                              {'\/jaguars': '/sports/jaguars'},
+                              {'\/news\/metro': '/news/local'},
                               {'tealium-test-tag.html': 'airshow'}
                       ];
         cccURLMappings = [
+                          // Common mappings
+                          // MBU custom mappings
                    ];
         cccPathMappings = [
+                           // Common mappings
                            {'\/$': 'homepage'},
+                           // MBU custom mappings
                            {'\/community\/clay': 'clay'},
                            {'\/(Dropbox|hello)\/': 'dropbox'},
                            {'tealium-test-tag.html': 'airshow'}
                    ];
+////////////////////////////////////////////////////////////////////////
 
 
         // build dfp_adunit default value
