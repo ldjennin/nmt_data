@@ -2,7 +2,7 @@
 /***
  * Provides jacksonville data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 2013.09.01.$Revision$
+ * @version: 2013.09.01.$Id$
  * 
  */
 var NMTdata = NMTdata || {};
