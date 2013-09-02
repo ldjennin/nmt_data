@@ -30,30 +30,32 @@ if (typeof NMTdata.ads === 'undefined') {
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
         adunitURLMappings = [
-                             // Common mappings
                              // MBU custom mappings
+                             // Common mappings
                       ];
         adunitPathMappings = [
-                              // Common mappings
-                              {'\/$': '/homepage'},
-                              {'\/cars$': '/autos'},
-                              {'\/cars\/': '/autos'},
                               // MBU custom mappings
                               {'\/jaguars': '/sports/jaguars'},
                               {'\/news\/metro': '/news/local'},
-                              {'tealium-test-tag.html': 'airshow'}
+                              {'tealium-test-tag.html': 'airshow'},
+                              // Common mappings
+                              {'\/cars$': '/autos'},
+                              {'\/cars\/': '/autos'},
+                              {'\/$': '/homepage'}
                       ];
         cccURLMappings = [
-                          // Common mappings
                           // MBU custom mappings
+                          // Common mappings
                    ];
         cccPathMappings = [
-                           // Common mappings
                            {'\/$': 'homepage'},
                            // MBU custom mappings
                            {'\/community\/clay': 'clay'},
                            {'\/(Dropbox|hello)\/': 'dropbox'},
-                           {'tealium-test-tag.html': 'airshow'}
+                           // Common mappings
+                           {'\/cars$': '/autos'},
+                           {'\/cars\/': '/autos'},
+                           {'\/$': '/homepage'}
                    ];
 ////////////////////////////////////////////////////////////////////////
 
