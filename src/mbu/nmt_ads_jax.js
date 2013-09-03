@@ -15,18 +15,21 @@ if (typeof NMTdata.ads === 'undefined') {
         // REQUIRES: NMTdata.data module to be loaded prior to this module.
         // ads related methods and properties.
         console.log("NMTdata.ads init");
-        
+
         var data = NMTdata.data,
+        adunitDomainMappings = new Array(),
         adunitPathMappings = new Array(),
         adunitURLMappings = new Array(),
         cccPathMappings = new Array(),
         cccURLMappings = new Array(),
         i = 0,
         mmo_ccc = '',
+        mmo_console = '',
         pathlength = 0,
-        dfp_adunit = '', // example: /11365842/jacksonville.com/autos
-        dfp_ccc = ''; // customTargeting value
-       	
+        dfp_adunit_prefix = '/11365842/jacksonville.com',
+        dfp_adunit = '', // example: /news/local
+		dfp_ccc = ''; // customTargeting value
+
 ////////////////////////////////////////////////////////////////////////
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
@@ -93,6 +96,13 @@ if (typeof NMTdata.ads === 'undefined') {
                            {'\/cars\/': '/autos'},
                            {'\/$': '/homepage'}
                    ];
+        adunitDomainMappings = [
+                           // MBU custom mappings
+                           {'jaxairnews': '/11365842/jaxairnews.com'},
+                           {'homes.jacksonville.com': '/11365842/homes.jacksonville.com'},
+                           {'autos.jacksonville.com': '/11365842/homes.jacksonville.com'},
+                           {'classifieds.jacksonville.com': '/11365842/homes.jacksonville.com'}
+                   ];
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -102,6 +112,9 @@ if (typeof NMTdata.ads === 'undefined') {
                 dfp_adunit += '/' + data.pathnames[i];
             }
         }
+
+        // Process domain mapping for dfp_adunit
+        dfp_adunit_prefix = data.processMapping(adunitDomainMappings, location.host, dfp_adunit_prefix);
 
         // Process Path mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
@@ -120,10 +133,18 @@ if (typeof NMTdata.ads === 'undefined') {
         mmo_ccc = data.getQueryParam('mmo_ccc');
         if (mmo_ccc !== undefined) { dfp_ccc = mmo_ccc; }
 
-        // Google has 40 character limit on targeting value.
+        // Google DFP has 40 character limit on targeting values.
         dfp_ccc = dfp_ccc.slice(0,40);
 
+        // output debug information to console
+        mmo_console = data.getQueryParam('google_console');
+        if (mmo_console !== undefined) {
+            console.log("NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            console.log("NMTdata.ads.dfp_ccc: "+dfp_ccc);
+        }
+
         return { // return object
+            dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: dfp_ccc
         };
