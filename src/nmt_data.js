@@ -44,7 +44,7 @@ if (typeof NMTdata.data === 'undefined') {
                     for (f in hMappings[i]) {
                         if (hMappings[i].hasOwnProperty(f)) {
                             g = new RegExp(f, 'i');
-                            if (g.test(document.URL)) {
+                            if (g.test(matchAgainst)) {
                                 aValue = hMappings[i][f];
                                 aBool = true;
                                 console.log("processMapping matched: " + f);
