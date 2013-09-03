@@ -17,7 +17,7 @@ if (typeof NMTdata.ads === 'undefined') {
         console.log("NMTdata.ads init");
 
         var data = NMTdata.data,
-        adunitDomainMappings = new Array(),
+        adunitPrefixDomainMappings = new Array(),
         adunitPathMappings = new Array(),
         adunitURLMappings = new Array(),
         cccPathMappings = new Array(),
@@ -96,7 +96,7 @@ if (typeof NMTdata.ads === 'undefined') {
                            {'\/cars\/': '/autos'},
                            {'\/$': '/homepage'}
                    ];
-        adunitDomainMappings = [
+        adunitPrefixDomainMappings = [
                            // MBU custom mappings
                            {'jaxairnews': '/11365842/jaxairnews.com'},
                            {'homes.jacksonville.com': '/11365842/homes.jacksonville.com'},
@@ -114,7 +114,7 @@ if (typeof NMTdata.ads === 'undefined') {
         }
 
         // Process domain mapping for dfp_adunit
-        dfp_adunit_prefix = data.processMapping(adunitDomainMappings, location.host, dfp_adunit_prefix);
+        dfp_adunit_prefix = data.processMapping(adunitPrefixDomainMappings, location.host, dfp_adunit_prefix);
 
         // Process Path mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
