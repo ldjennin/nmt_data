@@ -84,6 +84,9 @@ if (typeof NMTdata.ads === 'undefined') {
         mmo_ccc = data.getQueryParam('mmo_ccc');
         if (mmo_ccc !== undefined) { dfp_ccc = mmo_ccc; }
 
+        // Google has 40 character limit on targeting values.
+        dfp_ccc = dfp_ccc.slice(0,40);
+
         return { // return object
             dfp_adunit: dfp_adunit,
             dfp_ccc: dfp_ccc
