@@ -2,8 +2,8 @@
 /***
  * Provides jacksonville data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 2013.09.01.$Id$
- * nmt_ads.js version: 2013.09.01.1306
+ * @version: 2013.09.10.$Id$
+ * nmt_ads.js version: 2013.09.10.1625
  * 
  */
 var NMTdata = NMTdata || {};
@@ -15,19 +15,23 @@ if (typeof NMTdata.ads === 'undefined') {
         // REQUIRES: NMTdata.data module to be loaded prior to this module.
         // ads related methods and properties.
         console.log("NMTdata.ads init");
-        
+
         var data = NMTdata.data,
+        adunitPrefixDomainMappings = new Array(),
         adunitPathMappings = new Array(),
         adunitURLMappings = new Array(),
         cccPathMappings = new Array(),
         cccURLMappings = new Array(),
         i = 0,
         mmo_ccc = '',
+        mmo_console = '',
         pathlength = 0,
-        dfp_adunit = '', // example: /11365842/jacksonville.com/autos
-        dfp_ccc = ''; // customTargeting value
-       	
+        dfp_adunit = '', // example: /news/local
+		dfp_ccc = ''; // customTargeting value
+
 ////////////////////////////////////////////////////////////////////////
+        // CUSTOMIZE VARIABLES AND MAPPINGS
+        dfp_adunit_prefix = '/11365842/brainerddispatch.com',
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
         adunitURLMappings = [
@@ -36,65 +40,40 @@ if (typeof NMTdata.ads === 'undefined') {
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
-                              {'\/business\/local': '/money'},
-                              {'\/community\/my-arlington-sun': '/community/arlington'},
-                              {'\/community\/my-nassau-sun': '/community/nassau'},
-                              {'\/community\/shorelines': '/community/beaches'},
-                              {'\/news\/georgia': '/community/south-georgia'},
-                              {'\/jaguars': '/sports/jaguars'},
-                              {'\/sports\/racing': '/sports/auto-racing'},
-                              {'\/sports\/jacksonville_suns': '/sports/suns'},
-                              {'\/taxonomy\/term\/5930': '/sports/uf-gators'},
-                              {'\/taxonomy\/term\/5931': '/sports/fsu-seminoles'},
-                              {'\/taxonomy\/term\/5992': '/sports/uga-bulldogs'},
-                              {'\/taxonomy\/term\/5933': '/sports/unf-ospreys'},
-                              {'\/taxonomy\/term\/5520': '/sports/high-schools'},
-                              {'\/taxonomy\/term\/5515': '/sports/outdoors'},
-                              {'\/taxonomy\/term\/5932': '/sports/ju-dolphins'},
-                              {'\/taxonomy\/term\/6035': '/news/crime'},
-                              {'\/taxonomy\/term\/17917': '/news/military'},
-                              {'\/taxonomy\/term\/7914': '/news/politics-and-government'},
-                              {'\/taxonomy\/term\/17928': '/money/small-business'},
-                              {'\/taxonomy\/term\/6076': '/entertainment/arts'},
-                              {'\/taxonomy\/term\/6077': '/entertainment/food-and-dining'},
-                              {'\/taxonomy\/term\/6074': '/entertainment/home-garden'},
-                              {'\/opinion\/blog\/business': '/money/blogs'},
-                              {'\/business\/real-estate': '/money/real-estate'},
-                              {'\/business\/submitnews': '/money/submitnews'},
-                              {'\/business\/your-money': '/money/personal-finance'},
-                              {'\/opinion\/blogs\/columnists': '/opinion/columnists'},
-                              {'\/forum': '/opinion/forum'},
-                              {'\/opinion\/letters-readers': '/opinion/letters-from-readers'},
-                              {'\/opinion\/blog\/editorial-page-0': '/opinion/opinion-page-blog'},
-                              {'\/forums\/rants-raves-forum': '/opinion/rants-and-raves'},
-                              {'\/news\/savvy-citizen': '/opinion/savvy-citizen'},
-                              {'\/greatparks': '/video/great-parks'},
-                              {'\/video\/community': '/video/community-video'},
-                              {'\/video': '/videos'},
+                              {'^\/births$': '/news/births'},
+                              {'^\/business$': '/business/sectionfront'},
+                              {'^\/entertainment$': '/entertainment/sectionfront'},
+                              {'^\/lifestyle$': '/lifestyle/sectionfront'},
+                              {'^\/news$': '/news/sectionfront'},
+                              {'^\/outdoors$': '/outdoors/sectionfront'},
+                              {'^\/sports$': '/sports/sectionfront'},
+                              {'^\/weather$': '/weather/sectionfront'},
                               // Common mappings
-                              {'\/ap\/national': '/ap/nation'},
-                              {'\/news\/ap\/world': '/ap/world'},
-                              {'\/cars$': '/autos'},
-                              {'\/cars\/': '/autos'},
-                              {'\/news\/metro': '/news/local'},
-                              {'\/$': '/homepage'}
+                              {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
                    ];
         cccPathMappings = [
-                           {'\/$': 'homepage'},
                            // MBU custom mappings
-                           {'\/community\/clay': 'clay'},
-                           {'\/(Dropbox|hello)\/': 'dropbox'},
                            // Common mappings
-                           {'\/cars$': '/autos'},
-                           {'\/cars\/': '/autos'},
-                           {'\/$': '/homepage'}
+                           {'^\/$': '/homepage'}
+                   ];
+        adunitPrefixDomainMappings = [
+                           // These mappings will do a contains match against domain host.
+                           // MBU custom mappings
+                           {'autos.brainerddispatch.com': '/11365842/autos.brainerddispatch.com'},
+                           {'classifieds.brainerddispatch.com': '/11365842/brainerddispatch.com/classifieds'},
+                           {'events.brainerddispatch.com': '/11365842/brainerddispatch.com/events'},
+                           {'homes.jacksonville.com': '/11365842/brainerddispatch.com/homes'},
+                           {'jobs\.brainerddispatch': '/11365842/jobs.brainerddispatch.com'}
                    ];
 ////////////////////////////////////////////////////////////////////////
 
+
+        // Process domain mapping for dfp_adunit_prefix
+        dfp_adunit_prefix = data.processMapping(adunitPrefixDomainMappings, location.host, dfp_adunit_prefix);
 
         // build dfp_adunit default value
         for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
@@ -120,10 +99,19 @@ if (typeof NMTdata.ads === 'undefined') {
         mmo_ccc = data.getQueryParam('mmo_ccc');
         if (mmo_ccc !== undefined) { dfp_ccc = mmo_ccc; }
 
-        // Google has 40 character limitation on targeting values.
+        // Google DFP has 40 character limit on targeting values.
         dfp_ccc = dfp_ccc.slice(0,40);
 
+        // output debug information to console
+        mmo_console = data.getQueryParam('google_console');
+        if (mmo_console !== undefined) {
+            console.log("NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
+            console.log("NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            console.log("NMTdata.ads.dfp_ccc: "+dfp_ccc);
+        }
+
         return { // return object
+            dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: dfp_ccc
         };
