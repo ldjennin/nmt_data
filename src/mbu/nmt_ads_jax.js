@@ -1,72 +1,9 @@
 /*global NMTdata,window*/
 /***
- * Provides global data and methods for serving ads.
- * @author: Duane.Jennings@niit-mediatech.com
- * @version: 2013.09.01.$Id$
- */
-var NMTdata = NMTdata || {};
-
-// IF: prevent multiple loads of NMTdata.data
-if (typeof NMTdata.data === 'undefined') {
-
-    NMTdata.data = (function () {
-        // general data object methods and properties.
-        console.log("NMTdata.data init");
-
-        var pathnames = new Array(), // up to 9 pathnames
-            a = window.location.pathname.split('/'),
-            b = (a.length > 9) ? 9 : a.length-1,
-            c = 0;
-        a.shift();
-
-        for (c = 0; c < b; c++) { pathnames[c] = (typeof a[c] !== 'undefined') ? a[c] : ''; }
-
-        return { // return the object methods and properties.
-            getQueryParam: function (param) {
-                var query = window.location.search.substring(1),
-                    vars = query.split('&'),
-                    i = 0,
-                    pair = null;
-                for (i = 0; i < vars.length; i++) {
-                    pair = vars[i].split('=');
-                    if (decodeURIComponent(pair[0]) === param) {
-                        return decodeURIComponent(pair[1]);
-                    }
-                }
-            },
-            processMapping: function (hMappings, matchAgainst, defaultValue) {
-            	/**
-            	 * Takes hMappings and tests RegExp against value in matchAgainst.
-            	 */
-                var aBool = false, aValue = defaultValue, i = 0, f = null, g = null;
-                console.log("processMapping called: " + matchAgainst);
-                for (i = 0; i < hMappings.length; i++) {
-                    for (f in hMappings[i]) {
-                        if (hMappings[i].hasOwnProperty(f)) {
-                            g = new RegExp(f, 'i');
-                            if (g.test(matchAgainst)) {
-                                aValue = hMappings[i][f];
-                                aBool = true;
-                                console.log("processMapping matched: " + f);
-                            }
-                        }
-                    }
-                    if (aBool) { break; }
-                }
-                return aValue;
-            },
-            pathnames: pathnames // pathnames array
-        };
-    }());
-
-} // ENDIF: prevent multiple loads of NMTdata.data
-
-/*global NMTdata */
-/***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
  * @version: 2013.09.10.$Id$
- * nmt_ads.js version: 2013.09.10.1625
+ * nmt_ads.js version: 2013.09.11.1425
  * 
  */
 var NMTdata = NMTdata || {};
@@ -97,6 +34,22 @@ if (typeof NMTdata.ads === 'undefined') {
         dfp_adunit_prefix = '/11365842/jacksonville.com',
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
+        adunitPrefixDomainMappings = [
+                                      // These mappings will do a contains match against domain host.
+                                      // MBU custom mappings
+                                      {'autos.jacksonville.com': '/11365842/jacksonville.com/autos'},
+                                      {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
+                                      {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
+                                      {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
+                                      {'jaxairnews': '/11365842/jaxairnews.com'},
+                                      {'jobs\.': '/11365842/jacksonville.com/jobs'},
+                                      {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
+                                      {'^m\.jacksonville\.com': '/11365842/m.jacksonville.com'},
+                                      {'^m\.pfjax': '/11365842/m.jacksonville.com'},
+                                      {'mayportmirror': '/11365842/mayportmirror.com'},
+                                      {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
+                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
+                              ];
         adunitURLMappings = [
                              // MBU custom mappings
                              // Common mappings
@@ -110,18 +63,11 @@ if (typeof NMTdata.ads === 'undefined') {
                               {'\/community\/my-arlington-sun': '/community/arlington'},
                               {'\/community\/my-nassau-sun': '/community/nassau'},
                               {'\/community\/shorelines': '/community/beaches'},
-                              {'\/forum': '/opinion/forum'},
-                              {'\/forums\/rants-raves-forum': '/opinion/rants-and-raves'},
                               {'\/greatparks': '/video/great-parks'},
                               {'\/jaguars': '/sports/jaguars'},
-                              {'\/news\/georgia': '/community/south-georgia'},
-                              {'\/news\/savvy-citizen': '/opinion/savvy-citizen'},
-                              {'\/opinion\/blogs\/columnists': '/opinion/columnists'},
+                              {'\/news\/georgia': '/community/southgeorgia'},
                               {'\/opinion\/blog\/business': '/money/blogs'},
-                              {'\/opinion\/blog\/editorial-page-0': '/opinion/opinion-page-blog'},
-                              {'\/opinion\/letters-readers': '/opinion/letters-from-readers'},
                               {'\/sports\/jacksonville_suns': '/sports/suns'},
-                              {'\/sports\/racing': '/sports/auto-racing'},
                               {'\/taxonomy\/term\/17917': '/news/military'},
                               {'\/taxonomy\/term\/17928': '/money/small-business'},
                               {'\/taxonomy\/term\/5515': '/sports/outdoors'},
@@ -136,14 +82,11 @@ if (typeof NMTdata.ads === 'undefined') {
                               {'\/taxonomy\/term\/6076': '/entertainment/arts'},
                               {'\/taxonomy\/term\/6077': '/entertainment/food-and-dining'},
                               {'\/taxonomy\/term\/7914': '/news/politics-and-government'},
-                              {'\/video': '/videos'},
                               {'\/video\/community': '/video/community-video'},
                               // Common mappings
-                              {'\/ap\/national': '/ap/nation'},
-                              {'\/cars$': '/autos'},
-                              {'\/cars\/': '/autos'},
-                              {'\/news\/metro': '/news/local'},
-                              {'\/news\/ap\/world': '/ap/world'},
+                              {'^\/autos$': '/autos/section-front'},
+                              {'^\/news$': '/news/section-front'},
+                              {'^\/sports$': '/sports/section-front'},
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
@@ -155,20 +98,6 @@ if (typeof NMTdata.ads === 'undefined') {
                            // Common mappings
                            {'^\/$': 'homepage'}
                    ];
-        adunitPrefixDomainMappings = [
-                           // These mappings will do a contains match against domain host.
-                           // MBU custom mappings
-                           {'autos.jacksonville.com': '/11365842/autos.jacksonville.com'},
-                           {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
-                           {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
-                           {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
-                           {'jaxairnews': '/11365842/jaxairnews.com'},
-                           {'jobs\.': '/11365842/jobs.jacksonville.com'},
-                           {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
-                           {'mayportmirror': '/11365842/mayportmirror.com'},
-                           {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
-                           {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
-                   ];
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -179,6 +108,13 @@ if (typeof NMTdata.ads === 'undefined') {
         for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
                 dfp_adunit += '/' + data.pathnames[i];
+            }
+        }
+
+        // If only a single path element, then assume it is a section front.
+        if (data.pathnames.length == 1) {
+            if (data.pathnames[0] !== '') {
+                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
             }
         }
 

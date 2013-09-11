@@ -3,7 +3,7 @@
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
  * @version: 2013.09.10.$Id$
- * nmt_ads.js version: 2013.09.10.1625
+ * nmt_ads.js version: 2013.09.11.1425
  * 
  */
 var NMTdata = NMTdata || {};
@@ -34,6 +34,17 @@ if (typeof NMTdata.ads === 'undefined') {
         dfp_adunit_prefix = '/11365842/brainerddispatch.com',
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
+        adunitPrefixDomainMappings = [
+                                      // These mappings will do a contains match against domain host.
+                                      // MBU custom mappings
+                                      {'autos.brainerddispatch.com': '/11365842/autos.brainerddispatch.com'},
+                                      {'classifieds.brainerddispatch.com': '/11365842/brainerddispatch.com/classifieds'},
+                                      {'events.brainerddispatch.com': '/11365842/brainerddispatch.com/events'},
+                                      {'homes.jacksonville.com': '/11365842/brainerddispatch.com/homes'},
+                                      {'jobs\.brainerddispatch': '/11365842/jobs.brainerddispatch.com'},
+                                      {'spotted\.': '/11365842/brainerddispatch.com/photos'},
+                                      {'legacy\.com': '/11365842/brainerddispatch.com/obituaries'}
+                              ];
         adunitURLMappings = [
                              // MBU custom mappings
                              // Common mappings
@@ -41,13 +52,6 @@ if (typeof NMTdata.ads === 'undefined') {
         adunitPathMappings = [
                               // MBU custom mappings
                               {'^\/births$': '/lifestyle/births'},
-                              {'^\/business$': '/business/sectionfront'},
-                              {'^\/entertainment$': '/entertainment/sectionfront'},
-                              {'^\/lifestyle$': '/lifestyle/sectionfront'},
-                              {'^\/news$': '/news/sectionfront'},
-                              {'^\/outdoors$': '/outdoors/sectionfront'},
-                              {'^\/sports$': '/sports/sectionfront'},
-                              {'^\/weather$': '/weather/sectionfront'},
                               // Common mappings
                               {'^\/$': '/homepage'}
                       ];
@@ -60,17 +64,6 @@ if (typeof NMTdata.ads === 'undefined') {
                            // Common mappings
                            {'^\/$': 'homepage'}
                    ];
-        adunitPrefixDomainMappings = [
-                           // These mappings will do a contains match against domain host.
-                           // MBU custom mappings
-                           {'autos.brainerddispatch.com': '/11365842/autos.brainerddispatch.com'},
-                           {'classifieds.brainerddispatch.com': '/11365842/brainerddispatch.com/classifieds'},
-                           {'events.brainerddispatch.com': '/11365842/brainerddispatch.com/events'},
-                           {'homes.jacksonville.com': '/11365842/brainerddispatch.com/homes'},
-                           {'jobs\.brainerddispatch': '/11365842/jobs.brainerddispatch.com'},
-                           {'spotted\.': '/11365842/brainerddispatch.com/photos'},
-                           {'legacy\.com': '/11365842/brainerddispatch.com/obituaries'}
-                   ];
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -81,6 +74,13 @@ if (typeof NMTdata.ads === 'undefined') {
         for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
                 dfp_adunit += '/' + data.pathnames[i];
+            }
+        }
+
+        // If only a single path element, then assume it is a section front.
+        if (data.pathnames.length == 1) {
+            if (data.pathnames[0] !== '') {
+                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
             }
         }
 

@@ -2,7 +2,7 @@
 /***
  * Provides global data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 2013.09.01.$Id$
+ * @version: 2013.09.11.$Id$
  */
 var NMTdata = NMTdata || {};
 
@@ -37,6 +37,7 @@ if (typeof NMTdata.data === 'undefined') {
             processMapping: function (hMappings, matchAgainst, defaultValue) {
             	/**
             	 * Takes hMappings and tests RegExp against value in matchAgainst.
+            	 * First match in the list wins!
             	 */
                 var aBool = false, aValue = defaultValue, i = 0, f = null, g = null;
                 console.log("processMapping called: " + matchAgainst);

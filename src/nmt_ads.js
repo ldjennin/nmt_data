@@ -3,7 +3,7 @@
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
  * @version: 2013.09.10.$Id$
- * nmt_ads.js version: 2013.09.10.1625
+ * nmt_ads.js version: 2013.09.11.1425
  * 
  */
 var NMTdata = NMTdata || {};
@@ -34,6 +34,22 @@ if (typeof NMTdata.ads === 'undefined') {
         dfp_adunit_prefix = '/11365842/jacksonville.com',
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
+        adunitPrefixDomainMappings = [
+                                      // These mappings will do a contains match against domain host.
+                                      // MBU custom mappings
+                                      {'autos.jacksonville.com': '/11365842/jacksonville.com/autos'},
+                                      {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
+                                      {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
+                                      {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
+                                      {'jaxairnews': '/11365842/jaxairnews.com'},
+                                      {'jobs\.': '/11365842/jacksonville.com/jobs'},
+                                      {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
+                                      {'^m\.jacksonville\.com': '/11365842/m.jacksonville.com'},
+                                      {'^m\.pfjax': '/11365842/m.jacksonville.com'},
+                                      {'mayportmirror': '/11365842/mayportmirror.com'},
+                                      {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
+                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
+                              ];
         adunitURLMappings = [
                              // MBU custom mappings
                              // Common mappings
@@ -92,18 +108,6 @@ if (typeof NMTdata.ads === 'undefined') {
                            // Common mappings
                            {'^\/$': '/homepage'}
                    ];
-        adunitPrefixDomainMappings = [
-                           // These mappings will do a contains match against domain host.
-                           // MBU custom mappings
-                           {'autos.jacksonville.com': '/11365842/autos.jacksonville.com'},
-                           {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
-                           {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
-                           {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
-                           {'jaxairnews': '/11365842/jaxairnews.com'},
-                           {'jobs\.': '/11365842/jobs.jacksonville.com'},
-                           {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
-                           {'mayportmirror': '/11365842/mayportmirror.com'}
-                   ];
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -114,6 +118,13 @@ if (typeof NMTdata.ads === 'undefined') {
         for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
                 dfp_adunit += '/' + data.pathnames[i];
+            }
+        }
+
+        // If only a single path element, then assume it is a section front.
+        if (data.pathnames.length == 1) {
+            if (data.pathnames[0] !== '') {
+                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
             }
         }
 

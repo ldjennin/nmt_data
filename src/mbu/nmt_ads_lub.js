@@ -3,7 +3,7 @@
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
  * @version: 2013.09.10.$Id$
- * nmt_ads.js version: 2013.09.10.1625
+ * nmt_ads.js version: 2013.09.11.1425
  * 
  */
 var NMTdata = NMTdata || {};
@@ -34,6 +34,17 @@ if (typeof NMTdata.ads === 'undefined') {
         dfp_adunit_prefix = '/11365842/lubbockonline.com',
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
+        adunitPrefixDomainMappings = [
+                                      // These mappings will do a contains match against domain host.
+                                      // MBU custom mappings
+                                      {'autos.lubbockonline.com': '/11365842/autos.lubbockonline.com'},
+                                      {'classifieds.lubbockonline.com': '/11365842/lubbockonline.com/classifieds'},
+                                      {'events.lubbockonline.com': '/11365842/lubbockonline.com/events'},
+                                      {'homes.jacksonville.com': '/11365842/lubbockonline.com/homes'},
+                                      {'jobs\.lubbockonline': '/11365842/jobs.lubbockonline.com'},
+                                      {'spotted\.': '/11365842/lubbockonline.com/photos'},
+                                      {'legacy\.': '/11365842/lubbockonline.com/obituaries'}
+                              ];
         adunitURLMappings = [
                              // MBU custom mappings
                              // Common mappings
@@ -60,17 +71,6 @@ if (typeof NMTdata.ads === 'undefined') {
                            // Common mappings
                            {'^\/$': 'homepage'}
                    ];
-        adunitPrefixDomainMappings = [
-                           // These mappings will do a contains match against domain host.
-                           // MBU custom mappings
-                           {'autos.lubbockonline.com': '/11365842/autos.lubbockonline.com'},
-                           {'classifieds.lubbockonline.com': '/11365842/lubbockonline.com/classifieds'},
-                           {'events.lubbockonline.com': '/11365842/lubbockonline.com/events'},
-                           {'homes.jacksonville.com': '/11365842/lubbockonline.com/homes'},
-                           {'jobs\.lubbockonline': '/11365842/jobs.lubbockonline.com'},
-                           {'spotted\.': '/11365842/lubbockonline.com/photos'},
-                           {'legacy\.': '/11365842/lubbockonline.com/obituaries'}
-                   ];
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -81,6 +81,13 @@ if (typeof NMTdata.ads === 'undefined') {
         for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
                 dfp_adunit += '/' + data.pathnames[i];
+            }
+        }
+
+        // If only a single path element, then assume it is a section front.
+        if (data.pathnames.length == 1) {
+            if (data.pathnames[0] !== '') {
+                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
             }
         }
 
