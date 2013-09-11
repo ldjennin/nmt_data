@@ -31,7 +31,7 @@ if (typeof NMTdata.ads === 'undefined') {
 
 ////////////////////////////////////////////////////////////////////////
         // CUSTOMIZE VARIABLES AND MAPPINGS
-        dfp_adunit_prefix = '/11365842/brainerddispatch.com',
+        dfp_adunit_prefix = '/11365842/lubbockonline.com',
         // MANAGE MAPPINGS HERE
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
         adunitURLMappings = [
@@ -63,13 +63,13 @@ if (typeof NMTdata.ads === 'undefined') {
         adunitPrefixDomainMappings = [
                            // These mappings will do a contains match against domain host.
                            // MBU custom mappings
-                           {'autos.brainerddispatch.com': '/11365842/autos.brainerddispatch.com'},
-                           {'classifieds.brainerddispatch.com': '/11365842/brainerddispatch.com/classifieds'},
-                           {'events.brainerddispatch.com': '/11365842/brainerddispatch.com/events'},
-                           {'homes.jacksonville.com': '/11365842/brainerddispatch.com/homes'},
-                           {'jobs\.brainerddispatch': '/11365842/jobs.brainerddispatch.com'},
-                           {'spotted\.': '/11365842/brainerddispatch.com/photos'},
-                           {'legacy\.com': '/11365842/brainerddispatch.com/obituaries'}
+                           {'autos.lubbockonline.com': '/11365842/autos.lubbockonline.com'},
+                           {'classifieds.lubbockonline.com': '/11365842/lubbockonline.com/classifieds'},
+                           {'events.lubbockonline.com': '/11365842/lubbockonline.com/events'},
+                           {'homes.jacksonville.com': '/11365842/lubbockonline.com/homes'},
+                           {'jobs\.lubbockonline': '/11365842/jobs.lubbockonline.com'},
+                           {'spotted\.': '/11365842/lubbockonline.com/photos'},
+                           {'legacy\.': '/11365842/lubbockonline.com/obituaries'}
                    ];
 ////////////////////////////////////////////////////////////////////////
 
