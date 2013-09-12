@@ -1,4 +1,4 @@
-/*global NMTdata */
+/*global NMTdata,window*/
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
@@ -31,28 +31,29 @@ if (typeof NMTdata.ads === 'undefined') {
 		dfp_ccc = ''; // customTargeting value
 
 ////////////////////////////////////////////////////////////////////////
-        // CUSTOMIZE VARIABLES AND MAPPINGS
-        dfp_adunit_prefix = '/11365842/jacksonville.com',
-        // MANAGE MAPPINGS HERE
-        // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
+dfp_adunit_prefix = '/11365842/onlineathens.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
-                                      {'autos\.jacksonville\.com': '/11365842/jacksonville.com/autos'}
+                                      // MBU custom mappings
+                                      {'aroundhereonline\.com': '/11365842/aroundhereonline.com'},
+                                      {'legacy\.com': '/11365842/onlineathens.com/obituaries'}
                               ];
         adunitURLMappings = [
-                             // These mappings will do a contains match against absolute URL.
-                             {'autos\.jacksonville\.com\/fullurl': '/11365842/jacksonville.com/autos'}
+                             // MBU custom mappings
+                             // Common mappings
                       ];
         adunitPathMappings = [
-                              // These mappings will do a contains match against URL path only.
+                              // MBU custom mappings
+                              // Common mappings
+                              {'^\/home$': '/homepage'},
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
-                          // These mappings will do a contains match against absolute URL.
-                          {'autos\.jacksonville\.com\/fullurl': 'autos_fullurl'}
+                          // MBU custom mappings
+                          // Common mappings
                    ];
         cccPathMappings = [
-                           // These mappings will do a contains match against URL path only.
+                           // MBU custom mappings
                            // Common mappings
                            {'^\/$': 'homepage'}
                    ];
@@ -62,7 +63,7 @@ if (typeof NMTdata.ads === 'undefined') {
         dfp_adunit_prefix = data.processMapping(adunitPrefixDomainMappings, location.host, dfp_adunit_prefix);
 
         // build dfp_adunit default value
-        // Limit dfp_adunit to 3 path elements.
+        // Limit adunit to 3 path elements.
         pathlength = (data.pathnames.length > maxAdunitPathLength) ? maxAdunitPathLength : data.pathnames.length;
         for (i = 0; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
@@ -70,7 +71,7 @@ if (typeof NMTdata.ads === 'undefined') {
             }
         }
 
-//        // If only a single path element, then assume it is a section front.
+        // If only a single path element, then assume it is a section front.
 //        if (data.pathnames.length == 1) {
 //            if (data.pathnames[0] !== '') {
 //                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
@@ -84,7 +85,7 @@ if (typeof NMTdata.ads === 'undefined') {
 
         // dfp_ccc default value
         dfp_ccc = data.pathnames[data.pathnames.length - 1];
-
+        
         // Process Path mappings for dfp_ccc
         dfp_ccc = data.processMapping(cccPathMappings, window.location.pathname, dfp_ccc);
         // Process URL mappings for dfp_ccc
@@ -105,7 +106,7 @@ if (typeof NMTdata.ads === 'undefined') {
             console.log("NMTdata.ads.dfp_ccc: "+dfp_ccc);
         }
 
-        // output debug information to document
+        // output debug information to console
         mmo_console = data.getQueryParam('nmt_console');
         if (mmo_console !== undefined) {
             document.write("<p>NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);

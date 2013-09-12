@@ -2,8 +2,8 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 2013.09.10.$Id$
- * nmt_ads.js version: 2013.09.11.1425
+ * @version: 2013.09.12.$Id$
+ * nmt_ads.js version: 2013.09.12.1425
  * 
  */
 var NMTdata = NMTdata || {};
@@ -26,14 +26,12 @@ if (typeof NMTdata.ads === 'undefined') {
         mmo_ccc = '',
         mmo_console = '',
         pathlength = 0,
+        maxAdunitPathLength = 3,  // limit the adunit path elements.
         dfp_adunit = '', // example: /news/local
 		dfp_ccc = ''; // customTargeting value
 
 ////////////////////////////////////////////////////////////////////////
-        // CUSTOMIZE VARIABLES AND MAPPINGS
         dfp_adunit_prefix = '/11365842/jacksonville.com',
-        // MANAGE MAPPINGS HERE
-        // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
@@ -84,9 +82,7 @@ if (typeof NMTdata.ads === 'undefined') {
                               {'\/taxonomy\/term\/7914': '/news/politics-and-government'},
                               {'\/video\/community': '/video/community-video'},
                               // Common mappings
-                              {'^\/autos$': '/autos/section-front'},
-                              {'^\/news$': '/news/section-front'},
-                              {'^\/sports$': '/sports/section-front'},
+                              {'^\/home$': '/homepage'},
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
@@ -100,23 +96,24 @@ if (typeof NMTdata.ads === 'undefined') {
                    ];
 ////////////////////////////////////////////////////////////////////////
 
-
         // Process domain mapping for dfp_adunit_prefix
         dfp_adunit_prefix = data.processMapping(adunitPrefixDomainMappings, location.host, dfp_adunit_prefix);
 
         // build dfp_adunit default value
-        for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
+        // Limit adunit to 3 path elements.
+        pathlength = (data.pathnames.length > maxAdunitPathLength) ? maxAdunitPathLength : data.pathnames.length;
+        for (i = 0; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
                 dfp_adunit += '/' + data.pathnames[i];
             }
         }
 
         // If only a single path element, then assume it is a section front.
-        if (data.pathnames.length == 1) {
-            if (data.pathnames[0] !== '') {
-                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
-            }
-        }
+//        if (data.pathnames.length == 1) {
+//            if (data.pathnames[0] !== '') {
+//                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
+//            }
+//        }
 
         // Process Path mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
@@ -144,6 +141,14 @@ if (typeof NMTdata.ads === 'undefined') {
             console.log("NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             console.log("NMTdata.ads.dfp_adunit: "+dfp_adunit);
             console.log("NMTdata.ads.dfp_ccc: "+dfp_ccc);
+        }
+
+        // output debug information to console
+        mmo_console = data.getQueryParam('nmt_console');
+        if (mmo_console !== undefined) {
+            document.write("<p>NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
+            document.write("<p>NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            document.write("<p>NMTdata.ads.dfp_ccc: "+dfp_ccc);
         }
 
         return { // return object
