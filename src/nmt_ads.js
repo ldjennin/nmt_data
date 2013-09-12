@@ -3,7 +3,7 @@
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
  * @version: 2013.09.10.$Id$
- * nmt_ads.js version: 2013.09.11.1425
+ * nmt_ads.js version: 2013.09.12.1425
  * 
  */
 var NMTdata = NMTdata || {};
@@ -26,6 +26,7 @@ if (typeof NMTdata.ads === 'undefined') {
         mmo_ccc = '',
         mmo_console = '',
         pathlength = 0,
+        maxAdunitPathLength = 3,  // limit the adunit path elements.
         dfp_adunit = '', // example: /news/local
 		dfp_ccc = ''; // customTargeting value
 
@@ -36,97 +37,45 @@ if (typeof NMTdata.ads === 'undefined') {
         // TODO:2013-08-31:ldj:how do we provide UI and separate mappings for sites?
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
-                                      // MBU custom mappings
-                                      {'autos.jacksonville.com': '/11365842/jacksonville.com/autos'},
-                                      {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
-                                      {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
-                                      {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
-                                      {'jaxairnews': '/11365842/jaxairnews.com'},
-                                      {'jobs\.': '/11365842/jacksonville.com/jobs'},
-                                      {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
-                                      {'^m\.jacksonville\.com': '/11365842/m.jacksonville.com'},
-                                      {'^m\.pfjax': '/11365842/m.jacksonville.com'},
-                                      {'mayportmirror': '/11365842/mayportmirror.com'},
-                                      {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
-                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
+                                      {'autos\.jacksonville\.com': '/11365842/jacksonville.com/autos'}
                               ];
         adunitURLMappings = [
-                             // MBU custom mappings
-                             // Common mappings
+                             // These mappings will do a contains match against absolute URL.
+                             {'autos\.jacksonville\.com\/fullurl': '/11365842/jacksonville.com/autos'}
                       ];
         adunitPathMappings = [
-                              // MBU custom mappings
-                              {'\/business\/local': '/money'},
-                              {'\/business\/real-estate': '/money/real-estate'},
-                              {'\/business\/submitnews': '/money/submitnews'},
-                              {'\/business\/your-money': '/money/personal-finance'},
-                              {'\/community\/my-arlington-sun': '/community/arlington'},
-                              {'\/community\/my-nassau-sun': '/community/nassau'},
-                              {'\/community\/shorelines': '/community/beaches'},
-                              {'\/forum': '/opinion/forum'},
-                              {'\/forums\/rants-raves-forum': '/opinion/rants-and-raves'},
-                              {'\/greatparks': '/video/great-parks'},
-                              {'\/jaguars': '/sports/jaguars'},
-                              {'\/news\/georgia': '/community/south-georgia'},
-                              {'\/news\/savvy-citizen': '/opinion/savvy-citizen'},
-                              {'\/opinion\/blogs\/columnists': '/opinion/columnists'},
-                              {'\/opinion\/blog\/business': '/money/blogs'},
-                              {'\/opinion\/blog\/editorial-page-0': '/opinion/opinion-page-blog'},
-                              {'\/opinion\/letters-readers': '/opinion/letters-from-readers'},
-                              {'\/sports\/jacksonville_suns': '/sports/suns'},
-                              {'\/sports\/racing': '/sports/auto-racing'},
-                              {'\/taxonomy\/term\/17917': '/news/military'},
-                              {'\/taxonomy\/term\/17928': '/money/small-business'},
-                              {'\/taxonomy\/term\/5515': '/sports/outdoors'},
-                              {'\/taxonomy\/term\/5520': '/sports/high-schools'},
-                              {'\/taxonomy\/term\/5930': '/sports/uf-gators'},
-                              {'\/taxonomy\/term\/5931': '/sports/fsu-seminoles'},
-                              {'\/taxonomy\/term\/5932': '/sports/ju-dolphins'},
-                              {'\/taxonomy\/term\/5933': '/sports/unf-ospreys'},
-                              {'\/taxonomy\/term\/5992': '/sports/uga-bulldogs'},
-                              {'\/taxonomy\/term\/6035': '/news/crime'},
-                              {'\/taxonomy\/term\/6074': '/entertainment/home-garden'},
-                              {'\/taxonomy\/term\/6076': '/entertainment/arts'},
-                              {'\/taxonomy\/term\/6077': '/entertainment/food-and-dining'},
-                              {'\/taxonomy\/term\/7914': '/news/politics-and-government'},
-                              {'\/video': '/videos'},
-                              {'\/video\/community': '/video/community-video'},
-                              // Common mappings
-                              {'\/ap\/national': '/ap/nation'},
-                              {'\/cars$': '/autos'},
-                              {'\/cars\/': '/autos'},
-                              {'\/news\/metro': '/news/local'},
-                              {'\/news\/ap\/world': '/ap/world'},
+                              // These mappings will do a contains match against URL path only.
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
-                          // MBU custom mappings
-                          // Common mappings
+                          // These mappings will do a contains match against absolute URL.
+                          {'autos\.jacksonville\.com\/fullurl': 'autos_fullurl'}
                    ];
         cccPathMappings = [
-                           // MBU custom mappings
+                           // These mappings will do a contains match against URL path only.
                            // Common mappings
-                           {'^\/$': '/homepage'}
+                           {'^\/$': 'homepage'}
                    ];
 ////////////////////////////////////////////////////////////////////////
-
 
         // Process domain mapping for dfp_adunit_prefix
         dfp_adunit_prefix = data.processMapping(adunitPrefixDomainMappings, location.host, dfp_adunit_prefix);
 
         // build dfp_adunit default value
-        for (i = 0, pathlength = data.pathnames.length; i < pathlength; i++) {
+        // Limit dfp_adunit to 3 path elements.
+        pathlength = (data.pathnames.length > maxAdunitPathLength) ? maxAdunitPathLength : data.pathnames.length;
+        for (i = 0; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
                 dfp_adunit += '/' + data.pathnames[i];
             }
         }
 
-        // If only a single path element, then assume it is a section front.
-        if (data.pathnames.length == 1) {
-            if (data.pathnames[0] !== '') {
-                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
-            }
-        }
+//        // If only a single path element, then assume it is a section front.
+//        if (data.pathnames.length == 1) {
+//            if (data.pathnames[0] !== '') {
+//                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
+//            }
+//        }
 
         // Process Path mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
@@ -135,7 +84,7 @@ if (typeof NMTdata.ads === 'undefined') {
 
         // dfp_ccc default value
         dfp_ccc = data.pathnames[data.pathnames.length - 1];
-        
+
         // Process Path mappings for dfp_ccc
         dfp_ccc = data.processMapping(cccPathMappings, window.location.pathname, dfp_ccc);
         // Process URL mappings for dfp_ccc
@@ -154,6 +103,14 @@ if (typeof NMTdata.ads === 'undefined') {
             console.log("NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             console.log("NMTdata.ads.dfp_adunit: "+dfp_adunit);
             console.log("NMTdata.ads.dfp_ccc: "+dfp_ccc);
+        }
+
+        // output debug information to document
+        mmo_console = data.getQueryParam('nmt_console');
+        if (mmo_console !== undefined) {
+            document.write("<p>NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
+            document.write("<p>NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            document.write("<p>NMTdata.ads.dfp_ccc: "+dfp_ccc);
         }
 
         return { // return object
