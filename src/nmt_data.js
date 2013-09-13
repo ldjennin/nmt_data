@@ -11,6 +11,10 @@ if (typeof NMTdata.data === 'undefined') {
 
     NMTdata.data = (function () {
         // general data object methods and properties.
+        if(!window.console){
+            console={};
+            console.log = function(){};
+        }
         console.log("NMTdata.data init");
 
         var pathnames = new Array(), // up to 9 pathnames

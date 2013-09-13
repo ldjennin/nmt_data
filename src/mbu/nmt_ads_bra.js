@@ -14,6 +14,10 @@ if (typeof NMTdata.ads === 'undefined') {
     NMTdata.ads = (function () {
         // REQUIRES: NMTdata.data module to be loaded prior to this module.
         // ads related methods and properties.
+        if(!window.console){
+            console={};
+            console.log = function(){};
+        }
         console.log("NMTdata.ads init");
 
         var data = NMTdata.data,
