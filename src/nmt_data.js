@@ -38,6 +38,14 @@ if (typeof NMTdata.data === 'undefined') {
                     }
                 }
             },
+            escapeHtml: function (sanitizeMe) {
+                return sanitizeMe
+                .replace(/&/g, "&")
+                .replace(/</g, "<")
+                .replace(/>/g, ">")
+                .replace(/"/g, "\"")
+                .replace(/'/g, "'");
+            },
             processMapping: function (hMappings, matchAgainst, defaultValue) {
             	/**
             	 * Takes hMappings and tests RegExp against value in matchAgainst.
