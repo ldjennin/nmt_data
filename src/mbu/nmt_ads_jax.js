@@ -2,8 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 2013.09.12.$Id$
- * nmt_ads.js version: 2013.09.12.1425
+ * @version: 201309162118:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -35,7 +34,10 @@ if (typeof NMTdata.ads === 'undefined') {
 		dfp_ccc = ''; // customTargeting value
 
 ////////////////////////////////////////////////////////////////////////
-        dfp_adunit_prefix = '/11365842/jacksonville.com',
+/***
+ * mapping_version: 201309162115:443264
+ */
+dfp_adunit_prefix = '/11365842/jacksonville.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
@@ -43,6 +45,7 @@ if (typeof NMTdata.ads === 'undefined') {
                                       {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
                                       {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
                                       {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
+                                      {'rentals.jacksonville.com': '/11365842/jacksonville.com/rentals'},
                                       {'jaxairnews': '/11365842/jaxairnews.com'},
                                       {'jobs\.': '/11365842/jacksonville.com/jobs'},
                                       {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
@@ -54,6 +57,7 @@ if (typeof NMTdata.ads === 'undefined') {
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
+                             {'rentals.jacksonville.com': ''}
                              // Common mappings
                       ];
         adunitPathMappings = [
@@ -112,13 +116,6 @@ if (typeof NMTdata.ads === 'undefined') {
             }
         }
 
-        // If only a single path element, then assume it is a section front.
-//        if (data.pathnames.length == 1) {
-//            if (data.pathnames[0] !== '') {
-//                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
-//            }
-//        }
-
         // Process Path mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
         // Process URL mappings for dfp_adunit
@@ -156,6 +153,8 @@ if (typeof NMTdata.ads === 'undefined') {
         }
 
         return { // return object
+            dfp_nmt_mapping_version: '201309162115:443264',
+            dfp_nmt_ads_version: '201309162118:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: dfp_ccc
