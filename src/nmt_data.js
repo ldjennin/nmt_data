@@ -40,11 +40,11 @@ if (typeof NMTdata.data === 'undefined') {
             },
             escapeHtml: function (sanitizeMe) {
                 return sanitizeMe
-                .replace(/&/g, "&")
-                .replace(/</g, "<")
-                .replace(/>/g, ">")
-                .replace(/"/g, "\"")
-                .replace(/'/g, "'");
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
             },
             processMapping: function (hMappings, matchAgainst, defaultValue) {
             	/**
