@@ -114,7 +114,7 @@ if (typeof NMTdata.ads === 'undefined') {
         if (mmo_console !== undefined) {
             document.write("<p>NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             document.write("<p>NMTdata.ads.dfp_adunit: "+dfp_adunit);
-            document.write("<p>NMTdata.ads.dfp_ccc: "+dfp_ccc);
+            document.write("<p>NMTdata.ads.dfp_ccc: "+data.escapeHtml(dfp_ccc));
         }
 
         return { // return object
