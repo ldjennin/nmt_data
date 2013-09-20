@@ -32,75 +32,34 @@ var NMTdata = NMTdata || {};
 		dfp_ccc = ''; // customTargeting value
 
 ////////////////////////////////////////////////////////////////////////
-/***
- * mapping_version: 201309191014:444002
- */
-dfp_adunit_prefix = '/11365842/jacksonville.com',
+dfp_adunit_prefix = '/11365842/augusta.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'autos.jacksonville.com': '/11365842/jacksonville.com/autos'},
-                                      {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
-                                      {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
-                                      {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
-                                      {'rentals.jacksonville.com': '/11365842/jacksonville.com/rentals'},
-                                      {'jaxairnews': '/11365842/jaxairnews.com'},
-                                      {'jobs\.': '/11365842/jacksonville.com/jobs'},
-                                      {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
-                                      {'^m\.jacksonville\.com': '/11365842/m.jacksonville.com'},
-                                      {'^m\.pfjax': '/11365842/m.jacksonville.com'},
-                                      {'mayportmirror': '/11365842/mayportmirror.com'},
-                                      {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
-                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
+                                      {'autos.augusta.com': '/11365842/autos.augusta.com'},
+                                      {'classifieds.augusta.com': '/11365842/augusta.com/classifieds'},
+                                      {'events.augusta.com': '/11365842/augusta.com/events'},
+                                      {'homes.augusta.com': '/11365842/augusta.com/homes'},
+                                      {'jobs\.augusta': '/11365842/jobs.augusta.com'},
+                                      {'spotted\.': '/11365842/augusta.com/photos'},
+                                      {'legacy\.com': '/11365842/augusta.com/obituaries'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
-                             {'events.jacksonville.com\/index': '/homepage'},
-                             {'rentals.jacksonville.com': ''}
                              // Common mappings
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
-                              {'\/business\/local': '/money'},
-                              {'\/business\/real-estate': '/money/real-estate'},
-                              {'\/business\/submitnews': '/money/submitnews'},
-                              {'\/business\/your-money': '/money/personal-finance'},
-                              {'\/community\/my-arlington-sun': '/community/arlington'},
-                              {'\/community\/my-nassau-sun': '/community/nassau'},
-                              {'\/community\/shorelines': '/community/beaches'},
-                              {'\/greatparks': '/video/great-parks'},
-                              {'\/jaguars': '/sports/jaguars'},
-                              {'\/news\/georgia': '/community/southgeorgia'},
-                              {'\/opinion\/blog\/business': '/money/blogs'},
-                              {'\/sports\/jacksonville_suns': '/sports/suns'},
-                              {'\/taxonomy\/term\/17917': '/news/military'},
-                              {'\/taxonomy\/term\/17928': '/money/small-business'},
-                              {'\/taxonomy\/term\/5515': '/sports/outdoors'},
-                              {'\/taxonomy\/term\/5520': '/sports/high-schools'},
-                              {'\/taxonomy\/term\/5930': '/sports/uf-gators'},
-                              {'\/taxonomy\/term\/5931': '/sports/fsu-seminoles'},
-                              {'\/taxonomy\/term\/5932': '/sports/ju-dolphins'},
-                              {'\/taxonomy\/term\/5933': '/sports/unf-ospreys'},
-                              {'\/taxonomy\/term\/5992': '/sports/uga-bulldogs'},
-                              {'\/taxonomy\/term\/6035': '/news/crime'},
-                              {'\/taxonomy\/term\/6074': '/entertainment/home-garden'},
-                              {'\/taxonomy\/term\/6076': '/entertainment/arts'},
-                              {'\/taxonomy\/term\/6077': '/entertainment/food-and-dining'},
-                              {'\/taxonomy\/term\/7914': '/news/politics-and-government'},
-                              {'\/video\/community': '/video/community-video'},
+                              {'^\/births$': '/lifestyle/births'},
                               // Common mappings
-                              {'^\/home$': '/homepage'},
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
                           // MBU custom mappings
-                          {'events.jacksonville.com\/index': 'homepage'},
-                           {'\/news\/blog\?page': 'xfinity'}
                           // Common mappings
                    ];
         cccPathMappings = [
                            // MBU custom mappings
-                           {'^\/news\/blog$': 'xfinity'},
                            // Common mappings
                            {'^\/$': 'homepage'}
                    ];
@@ -158,7 +117,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309191014:444002',
+            dfp_nmt_mapping_version: '',
             dfp_nmt_ads_version: '201309191035:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
