@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201309191035:443263
+ * @version: 201309201044:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -33,17 +33,19 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309191014:444002
+ * mapping_version: 201309201043:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'autos.jacksonville.com': '/11365842/jacksonville.com/autos'},
-                                      {'classifieds.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
-                                      {'events.jacksonville.com': '/11365842/jacksonville.com/events'},
-                                      {'homes.jacksonville.com': '/11365842/jacksonville.com/homes'},
-                                      {'rentals.jacksonville.com': '/11365842/jacksonville.com/rentals'},
+                                      {'autos\.jacksonville.com': '/11365842/jacksonville.com/autos'},
+                                      {'classifieds\.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
+                                      {'events\.jacksonville.com': '/11365842/jacksonville.com/events'},
+                                      {'homes\.jacksonville.com': '/11365842/jacksonville.com/homes'},
+                                      {'rentals\.jacksonville\.com': '/11365842/jacksonville.com/rentals'},
+                                      {'runningsjacksonville\.com': '/11365842/runningjacksonville.com'},
+                                      {'schools\.jacksonville\.com': '/11365842/jacksonville.com/schools'},
                                       {'jaxairnews': '/11365842/jaxairnews.com'},
                                       {'jobs\.': '/11365842/jacksonville.com/jobs'},
                                       {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
@@ -51,12 +53,13 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
                                       {'^m\.pfjax': '/11365842/m.jacksonville.com'},
                                       {'mayportmirror': '/11365842/mayportmirror.com'},
                                       {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
+                                      {'zap2it\.com': '/11365842/jacksonville.com/entertainment'},
                                       {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
-                             {'events.jacksonville.com\/index': '/homepage'},
-                             {'rentals.jacksonville.com': ''}
+                             {'events\.jacksonville\.com\/index': '/homepage'},
+                             {'rentals\.jacksonville\.com': ''}
                              // Common mappings
                       ];
         adunitPathMappings = [
@@ -158,10 +161,12 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309191014:444002',
-            dfp_nmt_ads_version: '201309191035:443263',
+            dfp_nmt_mapping_version: '201309201043:444002',
+            dfp_nmt_ads_version: '201309201044:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
         };
+
     }());
+
