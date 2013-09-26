@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201309201044:443263
+ * @version: 201309201254:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -36,13 +36,16 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'classifieds.savannahnow.com': '/11365842/savannahnow.com/classifieds'},
-                                      {'events.savannahnow.com': '/11365842/savannahnow.com/events'},
-                                      {'homes.savannahnow.com': '/11365842/savannahnow.com/homes'},
-                                      {'jobs\.savannahnow': '/11365842/jobs.savannahnow.com'},
+                                      {'classifieds\.savannahnow\.com': '/11365842/savannahnow.com/classifieds'},
+                                      {'events\.savannahnow\.com': '/11365842/savannahnow.com/events'},
+                                      {'giftguide\.': '/11365842/giftguide.savannahnow.com'},
+                                      {'^m\.savannahnow\.com': '/11365842/m.savannahnow.com'},
+                                      {'^m\.pfsav': '/11365842/m.savannahnow.com'},
+                                      {'savannahhomesforsale\.com': '/11365842/savannahhomesforsale.com'},
+                                      {'jobs\.savannahnow\.com': '/11365842/savannahnow.com/jobs'},
                                       {'savannahmagazine\.com': '/11365842/savannahmagazine.com/'},
-                                      {'spotted\.': '/11365842/savannahnow.com/photos'},
-                                      {'legacy\.com': '/11365842/savannahnow.com/obituaries'}
+                                      {'spotted\.savannahnow\.com': '/11365842/savannahnow.com/multimedia/spotted'},
+                                      {'legacy\.com': '/11365842/savannahnow.com/obits'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
@@ -86,7 +89,13 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
         dfp_adunit = data.processMapping(adunitURLMappings, document.URL, dfp_adunit);
 
         // dfp_ccc default value
-        dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        // Paths that have trailing slash will leave the last path element empty.
+        // Let's check for this case and go back one more for the ccc value.
+        if (data.pathnames.length > 1 && data.pathnames[data.pathnames.length-1] == '') {
+            dfp_ccc = data.pathnames[data.pathnames.length - 2];
+        } else {
+            dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        }
         
         // Process Path mappings for dfp_ccc
         dfp_ccc = data.processMapping(cccPathMappings, window.location.pathname, dfp_ccc);
@@ -118,7 +127,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
 
         return { // return object
             dfp_nmt_mapping_version: '',
-            dfp_nmt_ads_version: '201309201044:443263',
+            dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
