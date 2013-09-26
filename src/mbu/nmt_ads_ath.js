@@ -2,14 +2,10 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 2013.09.12.$Id$
- * nmt_ads.js version: 2013.09.12.1425
+ * @version: 201309201254:443263
  * 
  */
 var NMTdata = NMTdata || {};
-
-// IF: prevent multiple loads of NMTdata.ads.jax
-if (typeof NMTdata.ads === 'undefined') {
 
     NMTdata.ads = (function () {
         // REQUIRES: NMTdata.data module to be loaded prior to this module.
@@ -22,6 +18,7 @@ if (typeof NMTdata.ads === 'undefined') {
 
         var data = NMTdata.data,
         adunitPrefixDomainMappings = new Array(),
+        adunitPrefixURLMappings = new Array(),
         adunitPathMappings = new Array(),
         adunitURLMappings = new Array(),
         cccPathMappings = new Array(),
@@ -35,11 +32,21 @@ if (typeof NMTdata.ads === 'undefined') {
 		dfp_ccc = ''; // customTargeting value
 
 ////////////////////////////////////////////////////////////////////////
+/***
+ * mapping_version: 201309252318:443762
+ */
 dfp_adunit_prefix = '/11365842/onlineathens.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'aroundhereonline\.com': '/11365842/aroundhereonline.com'},
+                                      {'autos.onlineathens.com': '/11365842/onlineathens.com/autos'},
+                                      {'classifieds.onlineathens.com': '/11365842/onlineathens.com/classifieds'},
+                                      {'events.onlineathens.com': '/11365842/onlineathens.com/events'},
+                                      {'homes.onlineathens.com': '/11365842/onlineathens.com/homes'},
+                                      {'jobs\.': '/11365842/onlineathens.com/jobs'},
+                                      {'^m\.onlineathens\.com': '/11365842/m.onlineathens.com'},
+                                      {'^m\.pfath': '/11365842/m.onlineathens.com'},
                                       {'legacy\.com': '/11365842/onlineathens.com/obituaries'}
                               ];
         adunitURLMappings = [
@@ -66,6 +73,9 @@ dfp_adunit_prefix = '/11365842/onlineathens.com',
         // Process domain mapping for dfp_adunit_prefix
         dfp_adunit_prefix = data.processMapping(adunitPrefixDomainMappings, location.host, dfp_adunit_prefix);
 
+        // Process URL mapping for dfp_adunit_prefix
+        dfp_adunit_prefix = data.processMapping(adunitPrefixURLMappings, document.URL, dfp_adunit_prefix);
+
         // build dfp_adunit default value
         // Limit adunit to 3 path elements.
         pathlength = (data.pathnames.length > maxAdunitPathLength) ? maxAdunitPathLength : data.pathnames.length;
@@ -75,20 +85,19 @@ dfp_adunit_prefix = '/11365842/onlineathens.com',
             }
         }
 
-        // If only a single path element, then assume it is a section front.
-//        if (data.pathnames.length == 1) {
-//            if (data.pathnames[0] !== '') {
-//                dfp_adunit = '/' + data.pathnames[0] + '/section-front';
-//            }
-//        }
-
         // Process Path mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
         // Process URL mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitURLMappings, document.URL, dfp_adunit);
 
         // dfp_ccc default value
-        dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        // Paths that have trailing slash will leave the last path element empty.
+        // Let's check for this case and go back one more for the ccc value.
+        if (data.pathnames.length > 1 && data.pathnames[data.pathnames.length-1] == '') {
+            dfp_ccc = data.pathnames[data.pathnames.length - 2];
+        } else {
+            dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        }
         
         // Process Path mappings for dfp_ccc
         dfp_ccc = data.processMapping(cccPathMappings, window.location.pathname, dfp_ccc);
@@ -115,14 +124,16 @@ dfp_adunit_prefix = '/11365842/onlineathens.com',
         if (mmo_console !== undefined) {
             document.write("<p>NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             document.write("<p>NMTdata.ads.dfp_adunit: "+dfp_adunit);
-            document.write("<p>NMTdata.ads.dfp_ccc: "+dfp_ccc);
+            document.write("<p>NMTdata.ads.dfp_ccc: "+data.escapeHtml(dfp_ccc));
         }
 
         return { // return object
+            dfp_nmt_mapping_version: '201309252318:443762',
+            dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
-            dfp_ccc: dfp_ccc
+            dfp_ccc: data.escapeHtml(dfp_ccc)
         };
+
     }());
 
-} // ENDIF: prevent multiple loads of NMTdata.ads
