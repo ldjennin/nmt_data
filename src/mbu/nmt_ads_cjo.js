@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261541:443787
+ * mapping_version: 201309261611:443787
  */
 dfp_adunit_prefix = '/11365842/cjonline.com',
         adunitPrefixDomainMappings = [
@@ -129,7 +129,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261541:443787',
+            dfp_nmt_mapping_version: '201309261611:443787',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309260648:443784
+ * mapping_version: 201309261613:443784
  */
 dfp_adunit_prefix = '/11365842/staugustine.com',
         adunitPrefixDomainMappings = [
@@ -57,7 +57,6 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
                               // MBU custom mappings
                               {'^\/ap\/national$': '/news/nationalnews'},
                               {'^\/births$': '/lifestyle/births'},
-                              {'^\/home\/am$': '/homepage'},
                               {'^\/taxonomy\/term\/1634\/2$': '/news/floridanews'},
                               {'^\/news\/florida$': '/news/floridanews'},
                               {'^\/news\/florida\/': '/news/floridanews'},
@@ -66,6 +65,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
                               {'^\/news\/school-news$': '/news/schoolnews'},
                               {'^\/news\/school-news\/': '/news/schoolnews'},
                               // Common mappings
+                              {'^\/home\/am$': '/homepage'},
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
@@ -138,7 +138,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309260648:443784',
+            dfp_nmt_mapping_version: '201309261613:443784',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

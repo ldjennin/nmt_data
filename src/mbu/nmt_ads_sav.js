@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261413:443265
+ * mapping_version: 201309261613:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com',
         adunitPrefixDomainMappings = [
@@ -133,7 +133,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261413:443265',
+            dfp_nmt_mapping_version: '201309261613:443265',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

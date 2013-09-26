@@ -33,22 +33,21 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261611:443785
+ * mapping_version: 201309261612:443789
  */
-dfp_adunit_prefix = '/11365842/amarillo.com',
+dfp_adunit_prefix = '/11365842/peninsulaclarion.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'autos\.amarillo\.com': '/11365842/amarillo.com/autos'},
-                                      {'classifieds\.amarillo\.com': '/11365842/amarillo.com/classifieds'},
-                                      {'events\.amarillo\.com': '/11365842/amarillo.com/events'},
-                                      {'homes\.amarillo\.com': '/11365842/amarillo.com/homes'},
-                                      {'jobs\.amarillo': '/11365842/jobs.amarillo.com'},
-                                      {'^m\.amarillo\.com': '/11365842/m.amarillo.com'},
-                                      {'^m\.pfama': '/11365842/m.amarillo.com'},
-                                      {'rentals\.amarillo\.com': '/11365842/amarillo.com/rentals'},
-                                      {'spotted\.amarillo\.com': '/11365842/amarillo.com/photos'},
-                                      {'legacy\.com': '/11365842/amarillo.com/obituaries'}
+                                      {'autos.peninsulaclarion.com': '/11365842/peninsulaclarion.com/autos'},
+                                      {'classifieds.peninsulaclarion.com': '/11365842/peninsulaclarion.com/classifieds'},
+                                      {'events.peninsulaclarion.com': '/11365842/peninsulaclarion.com/events'},
+                                      {'homes.peninsulaclarion.com': '/11365842/peninsulaclarion.com/homes'},
+                                      {'jobs\.peninsulaclarion': '/11365842/peninsulaclarion.com/jobs'},
+                                      {'^m\.peninsulaclarion\.com': '/11365842/m.peninsulaclarion.com'},
+                                      {'^m\.pfken': '/11365842/m.peninsulaclarion.com'},
+                                      {'spotted\.': '/11365842/peninsulaclarion.com/photos'},
+                                      {'legacy\.com': '/11365842/peninsulaclarion.com/obituaries'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
@@ -58,7 +57,6 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
                               // MBU custom mappings
                               {'^\/births$': '/lifestyle/births'},
                               // Common mappings
-                              {'^\/home$': '/homepage'},
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
@@ -68,7 +66,6 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
         cccPathMappings = [
                            // MBU custom mappings
                            // Common mappings
-                           {'^\/home$': 'homepage'},
                            {'^\/$': 'homepage'}
                    ];
 ////////////////////////////////////////////////////////////////////////
@@ -131,7 +128,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261611:443785',
+            dfp_nmt_mapping_version: '201309261612:443789',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

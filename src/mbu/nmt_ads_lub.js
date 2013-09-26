@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261415:443266
+ * mapping_version: 201309261612:443266
  */
 dfp_adunit_prefix = '/11365842/lubbockonline.com',
         adunitPrefixDomainMappings = [
@@ -128,7 +128,7 @@ dfp_adunit_prefix = '/11365842/lubbockonline.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261415:443266',
+            dfp_nmt_mapping_version: '201309261612:443266',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

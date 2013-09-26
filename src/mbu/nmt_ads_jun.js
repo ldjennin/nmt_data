@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261553:443790
+ * mapping_version: 201309261612:443790
  */
 dfp_adunit_prefix = '/11365842/juneauempire.com',
         adunitPrefixDomainMappings = [
@@ -128,7 +128,7 @@ dfp_adunit_prefix = '/11365842/juneauempire.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261553:443790',
+            dfp_nmt_mapping_version: '201309261612:443790',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

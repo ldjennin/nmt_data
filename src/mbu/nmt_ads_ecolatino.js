@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201309201044:443263
+ * @version: 201309201254:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -75,7 +75,13 @@ if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
         dfp_adunit = data.processMapping(adunitURLMappings, document.URL, dfp_adunit);
 
         // dfp_ccc default value
-        dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        // Paths that have trailing slash will leave the last path element empty.
+        // Let's check for this case and go back one more for the ccc value.
+        if (data.pathnames.length > 1 && data.pathnames[data.pathnames.length-1] == '') {
+            dfp_ccc = data.pathnames[data.pathnames.length - 2];
+        } else {
+            dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        }
         
         // Process Path mappings for dfp_ccc
         dfp_ccc = data.processMapping(cccPathMappings, window.location.pathname, dfp_ccc);
@@ -107,7 +113,7 @@ if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
 
         return { // return object
             dfp_nmt_mapping_version: '201309181425:443264',
-            dfp_nmt_ads_version: '201309201044:443263',
+            dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

@@ -33,9 +33,9 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261519:443786
+ * mapping_version: 201309261611:443786
  */
-dfp_adunit_prefix = '/11365842/augusta.com',
+dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
@@ -132,7 +132,7 @@ dfp_adunit_prefix = '/11365842/augusta.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261519:443786',
+            dfp_nmt_mapping_version: '201309261611:443786',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
