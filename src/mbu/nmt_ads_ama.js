@@ -139,3 +139,4 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
         };
 
     }());
+
