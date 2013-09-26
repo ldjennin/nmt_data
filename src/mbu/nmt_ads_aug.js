@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201309191035:443263
+ * @version: 201309201254:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -32,17 +32,24 @@ var NMTdata = NMTdata || {};
 		dfp_ccc = ''; // customTargeting value
 
 ////////////////////////////////////////////////////////////////////////
+/***
+ * mapping_version: 201309261519:443786
+ */
 dfp_adunit_prefix = '/11365842/augusta.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'autos.augusta.com': '/11365842/autos.augusta.com'},
-                                      {'classifieds.augusta.com': '/11365842/augusta.com/classifieds'},
-                                      {'events.augusta.com': '/11365842/augusta.com/events'},
-                                      {'homes.augusta.com': '/11365842/augusta.com/homes'},
-                                      {'jobs\.augusta': '/11365842/jobs.augusta.com'},
-                                      {'spotted\.': '/11365842/augusta.com/photos'},
-                                      {'legacy\.com': '/11365842/augusta.com/obituaries'}
+                                      {'autos\.augusta\.com': '/11365842/chronicle.augusta.com/autos'},
+                                      {'classifieds.augusta\.com': '/11365842/chronicle.augusta.com/classifieds'},
+                                      {'events\.augusta\.com': '/11365842/chronicle.augusta.com/events'},
+                                      {'homes\.augusta\.com': '/11365842/chronicle.augusta.com/homes'},
+                                      {'jobs\.augusta': '/11365842/chronicle.augusta.com/jobs'},
+                                      {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
+                                      {'^m\.pfaug': '/11365842/m.chronicle.augusta.com'},
+                                      {'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
+                                      {'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
+                                      {'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/photos'},
+                                      {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
@@ -52,6 +59,7 @@ dfp_adunit_prefix = '/11365842/augusta.com',
                               // MBU custom mappings
                               {'^\/births$': '/lifestyle/births'},
                               // Common mappings
+                              {'^\/home\/am$': '/homepage'},
                               {'^\/$': '/homepage'}
                       ];
         cccURLMappings = [
@@ -61,6 +69,7 @@ dfp_adunit_prefix = '/11365842/augusta.com',
         cccPathMappings = [
                            // MBU custom mappings
                            // Common mappings
+                           {'^\/home\/am$': 'homepage'},
                            {'^\/$': 'homepage'}
                    ];
 ////////////////////////////////////////////////////////////////////////
@@ -86,7 +95,13 @@ dfp_adunit_prefix = '/11365842/augusta.com',
         dfp_adunit = data.processMapping(adunitURLMappings, document.URL, dfp_adunit);
 
         // dfp_ccc default value
-        dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        // Paths that have trailing slash will leave the last path element empty.
+        // Let's check for this case and go back one more for the ccc value.
+        if (data.pathnames.length > 1 && data.pathnames[data.pathnames.length-1] == '') {
+            dfp_ccc = data.pathnames[data.pathnames.length - 2];
+        } else {
+            dfp_ccc = data.pathnames[data.pathnames.length - 1];
+        }
         
         // Process Path mappings for dfp_ccc
         dfp_ccc = data.processMapping(cccPathMappings, window.location.pathname, dfp_ccc);
@@ -117,10 +132,12 @@ dfp_adunit_prefix = '/11365842/augusta.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '',
-            dfp_nmt_ads_version: '201309191035:443263',
+            dfp_nmt_mapping_version: '201309261519:443786',
+            dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
         };
+
     }());
+
