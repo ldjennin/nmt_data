@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309201247:444002
+ * mapping_version: 201309242148:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com',
         adunitPrefixDomainMappings = [
@@ -41,6 +41,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
                                       // MBU custom mappings
                                       {'autos\.jacksonville.com': '/11365842/jacksonville.com/autos'},
                                       {'classifieds\.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
+                                      {'affiliate\.zap2it\.com': '/11365842/jacksonville.com/entertainment'},
                                       {'events\.jacksonville.com': '/11365842/jacksonville.com/events'},
                                       {'homes\.jacksonville.com': '/11365842/jacksonville.com/homes'},
                                       {'rentals\.jacksonville\.com': '/11365842/jacksonville.com/rentals'},
@@ -167,7 +168,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309201247:444002',
+            dfp_nmt_mapping_version: '201309242148:444002',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
