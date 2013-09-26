@@ -33,17 +33,20 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261416:443787
+ * mapping_version: 201309261541:443787
  */
 dfp_adunit_prefix = '/11365842/cjonline.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'autos.cjonline.com': '/11365842/autos.cjonline.com'},
-                                      {'classifieds.cjonline.com': '/11365842/cjonline.com/classifieds'},
-                                      {'events.cjonline.com': '/11365842/cjonline.com/events'},
-                                      {'homes.cjonline.com': '/11365842/cjonline.com/homes'},
+                                      {'autos\.cjonline\.com': '/11365842/cjonline.com/autos'},
+                                      {'classifieds\.cjonline\.com': '/11365842/cjonline.com/classifieds'},
+                                      {'events\.cjonline\.com': '/11365842/cjonline.com/events'},
+                                      {'homes\.cjonline\.com': '/11365842/cjonline.com/homes'},
                                       {'jobs\.cjonline': '/11365842/jobs.cjonline.com'},
+                                      {'^m\.cjonline\.com': '/11365842/m.cjonline.com'},
+                                      {'^m\.pftop': '/11365842/m.cjonline.com'},
+                                      {'rentals\.': '/11365842/cjonline.com/rentals'},
                                       {'spotted\.': '/11365842/cjonline.com/photos'},
                                       {'legacy\.com': '/11365842/cjonline.com/obituaries'}
                               ];
@@ -126,7 +129,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261416:443787',
+            dfp_nmt_mapping_version: '201309261541:443787',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
