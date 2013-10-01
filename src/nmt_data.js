@@ -2,7 +2,7 @@
 /***
  * Provides global data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201309162215$Id$
+ * @version: 201310011257$Id$
  */
 var NMTdata = NMTdata || {};
 
