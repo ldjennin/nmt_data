@@ -46,6 +46,27 @@ if (typeof NMTdata.data === 'undefined') {
                 .replace(/"/g, "&quot;")
                 .replace(/'/g, "&#039;");
             },
+            yearToAge: function (year) {
+            	/***
+            	 * Takes a year and converts it into an age range.
+            	 */
+            	var age = 0;
+            	age = (new Date()).getFullYear() - year;
+            	if (age < 13) return 'under 13';
+            	else if (age < 18) return '13-17';
+            	else if (age < 21) return '18-20';
+            	else if (age < 25) return '21-24';
+            	else if (age < 30) return '25-29';
+            	else if (age < 35) return '30-34';
+            	else if (age < 40) return '35-39';
+            	else if (age < 45) return '40-44';
+            	else if (age < 50) return '45-49';
+            	else if (age < 55) return '50-54';
+            	else if (age < 60) return '55-59';
+            	else if (age < 65) return '60-64';
+            	else return '65+';
+            	
+            },
             processMapping: function (hMappings, matchAgainst, defaultValue) {
             	/**
             	 * Takes hMappings and tests RegExp against value in matchAgainst.
