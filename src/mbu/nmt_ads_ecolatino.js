@@ -33,41 +33,25 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261612:443266
+ * mapping_version: 201309181425:443264
  */
-dfp_adunit_prefix = '/11365842/lubbockonline.com',
-        adunitPrefixDomainMappings = [
-                                      // These mappings will do a contains match against domain host.
-                                      // MBU custom mappings
-                                      {'autos\.lubbockonline\.com': '/11365842/lubbockonline.com/autos'},
-                                      {'classifieds\.lubbockonline\.com': '/11365842/lubbockonline.com/classifieds'},
-                                      {'events\.lubbockonline\.com': '/11365842/lubbockonline.com/events'},
-                                      {'homes\.lubbockonline\.com': '/11365842/homes.lubbockonline.com'},
-                                      {'jobs\.lubbockonline': '/11365842/jobs.lubbockonline.com'},
-                                      {'^m\.lubbockonline\.com': '/11365842/m.lubbockonline.com'},
-                                      {'^m\.pflub': '/11365842/m.lubbockonline.com'},
-                                      {'rentals\.': '/11365842/lubbockonline.com/rentals'},
-                                      {'spotted\.': '/11365842/lubbockonline.com/photos'},
-                                      {'legacy\.com': '/11365842/lubbockonline.com/obituaries'}
-                              ];
-        adunitURLMappings = [
-                             // MBU custom mappings
-                             // Common mappings
-                      ];
+dfp_adunit_prefix = '/11365842/ecolatino.com',
         adunitPathMappings = [
                               // MBU custom mappings
                               // Common mappings
+                              {'^\/home$': '/homepage'},
                               {'^\/$': '/homepage'}
                       ];
-        cccURLMappings = [
-                          // MBU custom mappings
-                          // Common mappings
-                   ];
         cccPathMappings = [
                            // MBU custom mappings
                            // Common mappings
                            {'^\/$': 'homepage'}
                    ];
+/***
+ * Custom functionality for ecolatino
+ **/
+// remove /en/ path element from pathnames.
+if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
 ////////////////////////////////////////////////////////////////////////
 
         // Process domain mapping for dfp_adunit_prefix
@@ -128,7 +112,7 @@ dfp_adunit_prefix = '/11365842/lubbockonline.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261612:443266',
+            dfp_nmt_mapping_version: '201309181425:443264',
             dfp_nmt_ads_version: '201309201254:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
