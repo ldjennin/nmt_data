@@ -51,6 +51,8 @@ if (typeof NMTdata.data === 'undefined') {
             	 * Takes a year and converts it into an age range.
             	 */
             	var age = 0;
+                if (typeof year == 'undefined') return '';
+
             	age = (new Date()).getFullYear() - year;
             	if (age < 13) return 'under 13';
             	else if (age < 18) return '13-17';
