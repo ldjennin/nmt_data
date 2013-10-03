@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201309201254:443263
+ * @version: 201310022226:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -33,26 +33,30 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261611:443786
+ * mapping_version: 201310022228:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
+                                      {'affiliate\.zap2it\.com': '/11365842/chronicle.augusta.com/things-do'},
                                       {'autos\.augusta\.com': '/11365842/chronicle.augusta.com/autos'},
-                                      {'classifieds.augusta\.com': '/11365842/chronicle.augusta.com/classifieds'},
+                                      {'booked\.augusta\.com': '/11365842/chronicle.augusta.com/booked'},
+                                      {'classifieds\.augusta\.com': '/11365842/chronicle.augusta.com/classifieds'},
                                       {'events\.augusta\.com': '/11365842/chronicle.augusta.com/events'},
                                       {'homes\.augusta\.com': '/11365842/chronicle.augusta.com/homes'},
+                                      {'hosted2\.ap\.org': '/11365842/chronicle.augusta.com/ap'},
                                       {'jobs\.augusta': '/11365842/chronicle.augusta.com/jobs'},
                                       {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
                                       {'^m\.pfaug': '/11365842/m.chronicle.augusta.com'},
                                       {'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
                                       {'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
-                                      {'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/photos'},
+                                      {'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/spotted'},
                                       {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
+                             {'http:\/\/autos\.augusta\.com': ''}
                              // Common mappings
                       ];
         adunitPathMappings = [
@@ -120,6 +124,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         if (mmo_console !== undefined) {
             console.log("NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             console.log("NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            console.log("DFP AdUnit: "+dfp_adunit_prefix+dfp_adunit);
             console.log("NMTdata.ads.dfp_ccc: "+dfp_ccc);
         }
 
@@ -128,12 +133,13 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         if (mmo_console !== undefined) {
             document.write("<p>NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             document.write("<p>NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            document.write("<p>DFP AdUnit: "+dfp_adunit_prefix+dfp_adunit);
             document.write("<p>NMTdata.ads.dfp_ccc: "+data.escapeHtml(dfp_ccc));
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261611:443786',
-            dfp_nmt_ads_version: '201309201254:443263',
+            dfp_nmt_mapping_version: '201310022228:443786',
+            dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201309201254:443263
+ * @version: 201310022226:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -126,6 +126,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
         if (mmo_console !== undefined) {
             console.log("NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             console.log("NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            console.log("DFP AdUnit: "+dfp_adunit_prefix+dfp_adunit);
             console.log("NMTdata.ads.dfp_ccc: "+dfp_ccc);
         }
 
@@ -134,12 +135,13 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
         if (mmo_console !== undefined) {
             document.write("<p>NMTdata.ads.dfp_adunit_prefix: "+dfp_adunit_prefix);
             document.write("<p>NMTdata.ads.dfp_adunit: "+dfp_adunit);
+            document.write("<p>DFP AdUnit: "+dfp_adunit_prefix+dfp_adunit);
             document.write("<p>NMTdata.ads.dfp_ccc: "+data.escapeHtml(dfp_ccc));
         }
 
         return { // return object
             dfp_nmt_mapping_version: '201309261613:443784',
-            dfp_nmt_ads_version: '201309201254:443263',
+            dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
