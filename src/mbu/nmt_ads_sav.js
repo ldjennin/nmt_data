@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310031208:443265
+ * mapping_version: 201310041000:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com',
         adunitPrefixDomainMappings = [
@@ -44,6 +44,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
                                       {'class\.savannahnow\.com': '/11365842/savannahnow.com/classifieds'},
                                       {'events\.savannahnow\.com': '/11365842/savannahnow.com/events'},
                                       {'giftguide\.': '/11365842/giftguide.savannahnow.com'},
+                                      {'physicianguide\.': '/11365842/savannahnow.com/physicianguide'},
                                       {'^m\.savannahnow\.com': '/11365842/m.savannahnow.com'},
                                       {'^m\.pfsav': '/11365842/m.savannahnow.com'},
                                       {'jobs\.savannahnow\.com': '/11365842/savannahnow.com/jobs'},
@@ -55,12 +56,14 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
-					{'rentals\.savannahnow\.com': ''}
+					{'rentals\.savannahnow\.com': ''},
+					{'events\.savannahnow\.com': ''}
                              // Common mappings
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
                               {'^\/births$': '/lifestyle/births'},
+                              {'^\/fast-physicianguide.php': '/physicianguide'},
                               // Common mappings
                               {'^\/homepageSMN$': '/homepage'},
                               {'^\/$': '/homepage'}
@@ -137,7 +140,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310031208:443265',
+            dfp_nmt_mapping_version: '201310041000:443265',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
