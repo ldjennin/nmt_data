@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310072101:443266
+ * mapping_version: 201310080553:443266
  */
 dfp_adunit_prefix = '/11365842/lubbockonline.com',
         adunitPrefixDomainMappings = [
@@ -42,18 +42,19 @@ dfp_adunit_prefix = '/11365842/lubbockonline.com',
                                       {'autos\.lubbockonline\.com': '/11365842/lubbockonline.com/autos'},
                                       {'classifieds\.lubbockonline\.com': '/11365842/lubbockonline.com/classifieds'},
                                       {'events\.lubbockonline\.com': '/11365842/lubbockonline.com/events'},
-                                      {'homes\.lubbockonline\.com': '/11365842/homes.lubbockonline.com'},
+                                      {'homes\.lubbockonline\.com': '/11365842/lubbockonline.com/homes'},
                                       {'jobs\.lubbockonline': '/11365842/jobs.lubbockonline.com'},
                                       {'^lonestarvarsity\.': '/11365842/lubbockonline.com/lonestarvarsity'},
                                       {'^m\.lubbockonline\.com': '/11365842/m.lubbockonline.com'},
                                       {'^m\.pflub': '/11365842/m.lubbockonline.com'},
                                       {'^redraiders\.': '/11365842/lubbockonline.com/redraiders'},
                                       {'rentals\.': '/11365842/lubbockonline.com/rentals'},
-                                      {'spotted\.': '/11365842/lubbockonline.com/photos'},
+                                      {'spotted\.': '/11365842/lubbockonline.com/spotted'},
                                       {'legacy\.com': '/11365842/lubbockonline.com/obituaries'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
+						{'events\.lubbockonline\.com': ''}
                              // Common mappings
                       ];
         adunitPathMappings = [
@@ -132,7 +133,7 @@ dfp_adunit_prefix = '/11365842/lubbockonline.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310072101:443266',
+            dfp_nmt_mapping_version: '201310080553:443266',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
