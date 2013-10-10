@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261611:443785
+ * mapping_version: 201310100954:443785
  */
 dfp_adunit_prefix = '/11365842/amarillo.com',
         adunitPrefixDomainMappings = [
@@ -43,7 +43,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
                                       {'classifieds\.amarillo\.com': '/11365842/amarillo.com/classifieds'},
                                       {'events\.amarillo\.com': '/11365842/amarillo.com/events'},
                                       {'homes\.amarillo\.com': '/11365842/amarillo.com/homes'},
-                                      {'jobs\.amarillo': '/11365842/jobs.amarillo.com'},
+                                      {'jobs\.amarillo': '/11365842/amarillo.com/jobs'},
                                       {'^m\.amarillo\.com': '/11365842/m.amarillo.com'},
                                       {'^m\.pfama': '/11365842/m.amarillo.com'},
                                       {'rentals\.amarillo\.com': '/11365842/amarillo.com/rentals'},
@@ -52,6 +52,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
+                             {'jobs\.amarillo': ''}
                              // Common mappings
                       ];
         adunitPathMappings = [
@@ -133,7 +134,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261611:443785',
+            dfp_nmt_mapping_version: '201310100954:443785',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
