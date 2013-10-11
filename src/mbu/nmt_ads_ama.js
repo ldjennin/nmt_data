@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310111523:443785
+ * mapping_version: 201310111613:443785
  */
 dfp_adunit_prefix = '/11365842/amarillo.com',
         adunitPrefixDomainMappings = [
@@ -49,12 +49,13 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
                                       {'^m\.amarillo\.com': '/11365842/m.amarillo.com'},
                                       {'^m\.pfama': '/11365842/m.amarillo.com'},
                                       {'rentals\.amarillo\.com': '/11365842/amarillo.com/rentals'},
-                                      {'spotted\.amarillo\.com': '/11365842/amarillo.com/photos'},
+                                      {'spotted\.amarillo\.com': '/11365842/amarillo.com/spotted'},
                                       {'legacy\.com': '/11365842/amarillo.com/obituaries'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
                              {'everythingamarillo\.com': ''},
+                             {'spotted\.amarillo\.com': ''},
                              {'jobs\.amarillo': ''}
                              // Common mappings
                       ];
@@ -137,7 +138,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310111523:443785',
+            dfp_nmt_mapping_version: '201310111613:443785',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
