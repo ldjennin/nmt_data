@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261550:443782
+ * mapping_version: 201310171117:443782
  */
 dfp_adunit_prefix = '/11365842/pineandlakes.com',
         adunitPrefixDomainMappings = [
@@ -62,6 +62,7 @@ dfp_adunit_prefix = '/11365842/pineandlakes.com',
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
+                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -130,7 +131,7 @@ dfp_adunit_prefix = '/11365842/pineandlakes.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261550:443782',
+            dfp_nmt_mapping_version: '201310171117:443782',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

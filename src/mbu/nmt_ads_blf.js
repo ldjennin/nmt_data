@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309261611:443792
+ * mapping_version: 201310171115:443792
  */
 dfp_adunit_prefix = '/11365842/blufftontoday.com',
         adunitPrefixDomainMappings = [
@@ -62,6 +62,7 @@ dfp_adunit_prefix = '/11365842/blufftontoday.com',
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
+                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -131,7 +132,7 @@ dfp_adunit_prefix = '/11365842/blufftontoday.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309261611:443792',
+            dfp_nmt_mapping_version: '201310171115:443792',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

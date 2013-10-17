@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310111633:443785
+ * mapping_version: 201310171114:443785
  */
 dfp_adunit_prefix = '/11365842/amarillo.com',
         adunitPrefixDomainMappings = [
@@ -69,6 +69,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
+                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -138,7 +139,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310111633:443785',
+            dfp_nmt_mapping_version: '201310171114:443785',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

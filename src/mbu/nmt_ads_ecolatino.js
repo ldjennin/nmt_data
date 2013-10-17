@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201309181425:443264
+ * mapping_version: 201310171115:443264
  */
 dfp_adunit_prefix = '/11365842/ecolatino.com',
         adunitPathMappings = [
@@ -114,7 +114,7 @@ if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201309181425:443264',
+            dfp_nmt_mapping_version: '201310171115:443264',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
