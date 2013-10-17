@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171115:443788
+ * mapping_version: 201310171526:443788
  */
 dfp_adunit_prefix = '/11365842/thecabin.net',
         adunitPrefixDomainMappings = [
@@ -43,6 +43,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
                                       {'classifieds\.thecabin\.net': '/11365842/thecabin.net/classifieds'},
                                       {'events\.thecabin\.net': '/11365842/thecabin.net/events'},
                                       {'homes\.thecabin\.net': '/11365842/thecabin.net/homes'},
+                                      {'inconway\.com': '/11365842/thecabin.net/inconway'},
                                       {'jobs\.thecabin': '/11365842/thecabin.net/jobs'},
                                       {'^m\.thecabin\.net': '/11365842/m.thecabin.net'},
                                       {'^m\.pfbra': '/11365842/m.thecabin.net'},
@@ -134,7 +135,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171115:443788',
+            dfp_nmt_mapping_version: '201310171526:443788',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
