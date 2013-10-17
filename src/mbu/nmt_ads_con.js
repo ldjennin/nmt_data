@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171526:443788
+ * mapping_version: 201310171738:443788
  */
 dfp_adunit_prefix = '/11365842/thecabin.net',
         adunitPrefixDomainMappings = [
@@ -41,7 +41,11 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
                                       // MBU custom mappings
                                       {'autos\.thecabin\.net': '/11365842/thecabin.net/autos'},
                                       {'classifieds\.thecabin\.net': '/11365842/thecabin.net/classifieds'},
+                                      {'conwaypedia\.net': '/11365842/thecabin.net/conwaypedia'},
                                       {'events\.thecabin\.net': '/11365842/thecabin.net/events'},
+                                      {'faulknercountybooked\.com': '/11365842/thecabin.net/faulknercountybooked'},
+                                      {'faulknercountybusinessjournal\.com': '/11365842/thecabin.net/faulknercountybusinessjournal'},
+                                      {'goconway\.com': '/11365842/thecabin.net/goconway'},
                                       {'homes\.thecabin\.net': '/11365842/thecabin.net/homes'},
                                       {'inconway\.com': '/11365842/thecabin.net/inconway'},
                                       {'jobs\.thecabin': '/11365842/thecabin.net/jobs'},
@@ -49,7 +53,8 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
                                       {'^m\.pfbra': '/11365842/m.thecabin.net'},
                                       {'rentals\.thecabin\.net': '/11365842/thecabin.net/rentals'},
                                       {'spotted\.': '/11365842/thecabin.net/photos'},
-                                      {'legacy\.net': '/11365842/thecabin.net/obituaries'}
+                                      {'legacy\.net': '/11365842/thecabin.net/obituaries'},
+                                      {'womensinc\.net': '/11365842/thecabin.net/womensinc'}
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
@@ -135,7 +140,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171526:443788',
+            dfp_nmt_mapping_version: '201310171738:443788',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
