@@ -33,21 +33,28 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171115:443793
+ * mapping_version: 201310181357:443793
  */
 dfp_adunit_prefix = '/11365842/brainerddispatch.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos\.brainerddispatch\.com': '/11365842/brainerddispatch.com/autos'},
+                                      {'autos\.upnorthautos\.com': '/11365842/brainerddispatch.com/autos'},
+                                      {'brainerdhistory\.com': '/11365842/brainerddispatch.com/brainerdhistory'},
+                                      {'brainerdlakesbound\.com': '/11365842/brainerddispatch.com/brainerdlakesbound'},
+                                      {'brainerdwarriors\.com': '/11365842/brainerddispatch.com/brainerdwarriors'},
                                       {'classifieds\.brainerddispatch\.com': '/11365842/brainerddispatch.com/classifieds'},
                                       {'events\.brainerddispatch\.com': '/11365842/brainerddispatch.com/events'},
+                                      {'go\.brainerddispatch\.com': '/11365842/brainerddispatch.com/go'},
                                       {'homes\.brainerddispatch\.com': '/11365842/brainerddispatch.com/homes'},
-                                      {'jobs\.brainerddispatch': '/11365842/jobs.brainerddispatch.com'},
+                                      {'jobs\.brainerddispatch': '/11365842/brainerddispatch.com/jobs'},
+                                      {'local\.brainerddispatch': '/11365842/brainerddispatch.com/local'},
                                       {'^m\.brainerddispatch\.com': '/11365842/m.brainerddispatch.com'},
                                       {'^m\.pfbar': '/11365842/m.brainerddispatch.com'},
                                       {'rentals\.': '/11365842/brainerddispatch.com/rentals'},
-                                      {'spotted\.': '/11365842/brainerddispatch.com/photos'},
+                                      {'spotted\.': '/11365842/brainerddispatch.com/spotted'},
+                                      {'themoviefargo\.com': '/11365842/brainerddispatch.com/themoviefargo'},
                                       {'legacy\.com': '/11365842/brainerddispatch.com/obituaries'}
                               ];
         adunitURLMappings = [
@@ -134,7 +141,7 @@ dfp_adunit_prefix = '/11365842/brainerddispatch.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171115:443793',
+            dfp_nmt_mapping_version: '201310181357:443793',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

@@ -8,3 +8,4 @@ do
 	echo $prop
 	echo -e "\n" >> /home/duane.jennings/src/nmt_data/src/mbu/nmt_ads_$prop.js
 done
+git status
