@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310220911:443786
+ * mapping_version: 201310221330:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         adunitPrefixDomainMappings = [
@@ -53,6 +53,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
                                       {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
                                       {'^m\.pfaug': '/11365842/m.chronicle.augusta.com'},
                                       {'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
+                                      {'michaux\.augusta\.com': '/11365842/chronicle.augusta.com/sports/scott-michaux'},
                                       {'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
                                       {'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/spotted'},
                                       {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
@@ -71,8 +72,9 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
                       ];
         cccURLMappings = [
                           // MBU custom mappings
+                          {'michaux\.augusta\.com': ''},
                           // Common mappings
-                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
+                          {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -142,7 +144,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310220911:443786',
+            dfp_nmt_mapping_version: '201310221330:443786',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

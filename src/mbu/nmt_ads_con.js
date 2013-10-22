@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171738:443788
+ * mapping_version: 201310221328:443788
  */
 dfp_adunit_prefix = '/11365842/thecabin.net',
         adunitPrefixDomainMappings = [
@@ -140,7 +140,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171738:443788',
+            dfp_nmt_mapping_version: '201310221328:443788',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
