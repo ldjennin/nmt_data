@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310221330:443786
+ * mapping_version: 201310221534:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         adunitPrefixDomainMappings = [
@@ -60,8 +60,9 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
-                             {'http:\/\/autos\.augusta\.com': ''}
+                             {'http:\/\/autos\.augusta\.com': ''},
                              // Common mappings
+                             {'\.adpay\.com': '/classifieds'}
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
@@ -144,7 +145,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310221330:443786',
+            dfp_nmt_mapping_version: '201310221534:443786',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
