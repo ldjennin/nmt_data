@@ -33,13 +33,16 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171114:443786
+ * mapping_version: 201310220911:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'affiliate\.zap2it\.com': '/11365842/chronicle.augusta.com/things-do'},
+                                      {'www\.augusta\.com': '/11365842/augusta.com'},
+                                      {'augustafamily\.com': '/11365842/augustafamily.com'},
+                                      {'augustamagazine\.com': '/11365842/augustamagazine.com'},
                                       {'autos\.augusta\.com': '/11365842/chronicle.augusta.com/autos'},
                                       {'booked\.augusta\.com': '/11365842/chronicle.augusta.com/booked'},
                                       {'classifieds\.augusta\.com': '/11365842/chronicle.augusta.com/classifieds'},
@@ -139,7 +142,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171114:443786',
+            dfp_nmt_mapping_version: '201310220911:443786',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
