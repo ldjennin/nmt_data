@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201310231348:443263
+ * @version: 201310231411:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -90,7 +90,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         pathlength = (data.pathnames.length > maxAdunitPathLength) ? maxAdunitPathLength : data.pathnames.length;
         for (i = 0; i < pathlength; i++) {
             if (data.pathnames[i] !== '') {
-                dfp_adunit += '/' + data.pathnames[i];
+                dfp_adunit += '/' + data.pathnames[i].slice(0,100);
             }
         }
 
@@ -144,7 +144,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
 
         return { // return object
             dfp_nmt_mapping_version: '201310231358:443786',
-            dfp_nmt_ads_version: '201310231348:443263',
+            dfp_nmt_ads_version: '201310231411:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
