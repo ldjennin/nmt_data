@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171116:444002
+ * mapping_version: 201310221907:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com',
         adunitPrefixDomainMappings = [
@@ -62,8 +62,9 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
                              // MBU custom mappings
                              {'search\.jacksonville\.com': ''},
                              {'events\.jacksonville\.com\/index': '/homepage'},
-                             {'rentals\.jacksonville\.com': ''}
+                             {'rentals\.jacksonville\.com': ''},
                              // Common mappings
+                             {'\.adpay\.com': '/classifieds'}
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
@@ -103,7 +104,8 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
                           {'events.jacksonville.com\/index': 'homepage'},
                           {'\/news\/blog\?page': 'xfinity'},
                           // Common mappings
-                          {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
+                          {'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID},
+                          {'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -173,7 +175,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171116:444002',
+            dfp_nmt_mapping_version: '201310221907:444002',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310221328:443788
+ * mapping_version: 201310230904:443788
  */
 dfp_adunit_prefix = '/11365842/thecabin.net',
         adunitPrefixDomainMappings = [
@@ -59,6 +59,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
         adunitURLMappings = [
                              // MBU custom mappings
                              // Common mappings
+                             {'\.adpay\.com': '/classifieds'}
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
@@ -70,7 +71,8 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
-                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
+                          {'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID},
+                          {'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -140,7 +142,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310221328:443788',
+            dfp_nmt_mapping_version: '201310230904:443788',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

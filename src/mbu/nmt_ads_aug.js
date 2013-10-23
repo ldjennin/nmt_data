@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310221534:443786
+ * mapping_version: 201310221724:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         adunitPrefixDomainMappings = [
@@ -75,7 +75,8 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
                           // MBU custom mappings
                           {'michaux\.augusta\.com': ''},
                           // Common mappings
-                          {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
+                          {'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID},
+                          {'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -145,7 +146,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310221534:443786',
+            dfp_nmt_mapping_version: '201310221724:443786',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

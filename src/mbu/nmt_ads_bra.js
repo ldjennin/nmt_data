@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310210059:443793
+ * mapping_version: 201310221938:443793
  */
 dfp_adunit_prefix = '/11365842/brainerddispatch.com',
         adunitPrefixDomainMappings = [
@@ -59,8 +59,9 @@ dfp_adunit_prefix = '/11365842/brainerddispatch.com',
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
-					{'events\.brainerddispatch\.com': ''}
+                             {'events\.brainerddispatch\.com': ''},
                              // Common mappings
+                             {'\.adpay\.com': '/classifieds'}
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
@@ -72,7 +73,8 @@ dfp_adunit_prefix = '/11365842/brainerddispatch.com',
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
-                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
+                          {'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID},
+                          {'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -142,7 +144,7 @@ dfp_adunit_prefix = '/11365842/brainerddispatch.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310210059:443793',
+            dfp_nmt_mapping_version: '201310221938:443793',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

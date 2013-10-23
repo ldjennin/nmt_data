@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171117:443265
+ * mapping_version: 201310230937:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com',
         adunitPrefixDomainMappings = [
@@ -59,9 +59,10 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
                               ];
         adunitURLMappings = [
                              // MBU custom mappings
-					{'rentals\.savannahnow\.com': ''},
-					{'events\.savannahnow\.com': ''}
+                             {'rentals\.savannahnow\.com': ''},
+                             {'events\.savannahnow\.com': ''},
                              // Common mappings
+                             {'\.adpay\.com': '/classifieds'}
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
@@ -74,7 +75,8 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
-                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
+                          {'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID},
+                          {'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -144,7 +146,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171117:443265',
+            dfp_nmt_mapping_version: '201310230937:443265',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

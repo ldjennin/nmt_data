@@ -33,7 +33,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171117:443784
+ * mapping_version: 201310230905:443784
  */
 dfp_adunit_prefix = '/11365842/staugustine.com',
         adunitPrefixDomainMappings = [
@@ -52,6 +52,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
         adunitURLMappings = [
                              // MBU custom mappings
                              // Common mappings
+                             {'\.adpay\.com': '/classifieds'}
                       ];
         adunitPathMappings = [
                               // MBU custom mappings
@@ -71,7 +72,8 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
         cccURLMappings = [
                           // MBU custom mappings
                           // Common mappings
-                         {'adpay\.com\/searchresults\.aspx': NMTdata.data.getQueryParam("catid")}
+                          {'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID},
+                          {'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
@@ -141,7 +143,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171117:443784',
+            dfp_nmt_mapping_version: '201310230905:443784',
             dfp_nmt_ads_version: '201310022226:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
