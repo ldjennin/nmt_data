@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201310022226:443263
+ * @version: 201310231348:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -28,14 +28,18 @@ var NMTdata = NMTdata || {};
         mmo_console = '',
         pathlength = 0,
         maxAdunitPathLength = 3,  // limit the adunit path elements.
+        dfp_adunit_prefix = '', // example: /11365842/peninsulaclarion.com
         dfp_adunit = '', // example: /news/local
 		dfp_ccc = ''; // customTargeting value
 
+        // AdPay global variable for classifieds category.
+        if (typeof paperCategoryID == 'undefined') paperCategoryID = 'classifieds';
+
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310221907:444002
+ * mapping_version: 201310231351:444002
  */
-dfp_adunit_prefix = '/11365842/jacksonville.com',
+dfp_adunit_prefix = '/11365842/jacksonville.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
@@ -58,14 +62,6 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
                                       {'zap2it\.com': '/11365842/jacksonville.com/entertainment'},
                                       {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
                               ];
-        adunitURLMappings = [
-                             // MBU custom mappings
-                             {'search\.jacksonville\.com': ''},
-                             {'events\.jacksonville\.com\/index': '/homepage'},
-                             {'rentals\.jacksonville\.com': ''},
-                             // Common mappings
-                             {'\.adpay\.com': '/classifieds'}
-                      ];
         adunitPathMappings = [
                               // MBU custom mappings
                               {'\/business\/local': '/money'},
@@ -94,25 +90,31 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
                               {'\/taxonomy\/term\/6076': '/entertainment/arts'},
                               {'\/taxonomy\/term\/6077': '/entertainment/food-and-dining'},
                               {'\/taxonomy\/term\/7914': '/news/politics-and-government'},
-                              {'\/video\/community': '/video/community-video'},
-                              // Common mappings
-                              {'^\/home$': '/homepage'},
-                              {'^\/$': '/homepage'}
+                              {'\/video\/community': '/video/community-video'}
                       ];
         cccURLMappings = [
                           // MBU custom mappings
-                          {'events.jacksonville.com\/index': 'homepage'},
-                          {'\/news\/blog\?page': 'xfinity'},
-                          // Common mappings
-                          {'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID},
-                          {'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID}
+                          {'\/news\/blog\?page': 'xfinity'}
                    ];
         cccPathMappings = [
                            // MBU custom mappings
-                           {'^\/news\/blog$': 'xfinity'},
-                           // Common mappings
-                           {'^\/$': 'homepage'}
+                           {'^\/news\/blog$': 'xfinity'}
                    ];
+/***
+ * common mappings: 201310231345:447642
+ */
+        adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
+
+        adunitPathMappings.push({'^\/home$': '/homepage'});
+        adunitPathMappings.push({'^\/home/am$': '/homepage'});
+        adunitPathMappings.push({'^\/home/pm$': '/homepage'});
+        adunitPathMappings.push({'^\/index$': '/homepage'});
+        adunitPathMappings.push({'^\/$': '/homepage'});
+
+        cccURLMappings.push({'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
+        cccURLMappings.push({'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
+
+        cccPathMappings.push({'^\/$': 'homepage'});
 ////////////////////////////////////////////////////////////////////////
 
         // Process domain mapping for dfp_adunit_prefix
@@ -156,6 +158,10 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
         // Google DFP has 40 character limit on targeting values.
         dfp_ccc = dfp_ccc.slice(0,40);
 
+        // Google DFP does not allow certain characters for adunit values.
+        dfp_adunit = dfp_adunit.replace(' ', '-');
+        dfp_adunit = dfp_adunit.replace(',', '-');
+
         // output debug information to console
         mmo_console = data.getQueryParam('google_console');
         if (mmo_console !== undefined) {
@@ -175,8 +181,8 @@ dfp_adunit_prefix = '/11365842/jacksonville.com',
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310221907:444002',
-            dfp_nmt_ads_version: '201310022226:443263',
+            dfp_nmt_mapping_version: '201310231351:444002',
+            dfp_nmt_ads_version: '201310231348:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

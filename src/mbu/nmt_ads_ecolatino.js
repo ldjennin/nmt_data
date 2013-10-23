@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201310022226:443263
+ * @version: 201310231348:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -28,30 +28,39 @@ var NMTdata = NMTdata || {};
         mmo_console = '',
         pathlength = 0,
         maxAdunitPathLength = 3,  // limit the adunit path elements.
+        dfp_adunit_prefix = '', // example: /11365842/peninsulaclarion.com
         dfp_adunit = '', // example: /news/local
 		dfp_ccc = ''; // customTargeting value
 
+        // AdPay global variable for classifieds category.
+        if (typeof paperCategoryID == 'undefined') paperCategoryID = 'classifieds';
+
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310171115:443264
+ * mapping_version: 201310231359:443264
  */
-dfp_adunit_prefix = '/11365842/ecolatino.com',
-        adunitPathMappings = [
-                              // MBU custom mappings
-                              // Common mappings
-                              {'^\/home$': '/homepage'},
-                              {'^\/$': '/homepage'}
-                      ];
-        cccPathMappings = [
-                           // MBU custom mappings
-                           // Common mappings
-                           {'^\/$': 'homepage'}
-                   ];
+dfp_adunit_prefix = '/11365842/ecolatino.com';
+
 /***
  * Custom functionality for ecolatino
  **/
 // remove /en/ path element from pathnames.
 if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
+/***
+ * common mappings: 201310231345:447642
+ */
+        adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
+
+        adunitPathMappings.push({'^\/home$': '/homepage'});
+        adunitPathMappings.push({'^\/home/am$': '/homepage'});
+        adunitPathMappings.push({'^\/home/pm$': '/homepage'});
+        adunitPathMappings.push({'^\/index$': '/homepage'});
+        adunitPathMappings.push({'^\/$': '/homepage'});
+
+        cccURLMappings.push({'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
+        cccURLMappings.push({'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
+
+        cccPathMappings.push({'^\/$': 'homepage'});
 ////////////////////////////////////////////////////////////////////////
 
         // Process domain mapping for dfp_adunit_prefix
@@ -95,6 +104,10 @@ if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
         // Google DFP has 40 character limit on targeting values.
         dfp_ccc = dfp_ccc.slice(0,40);
 
+        // Google DFP does not allow certain characters for adunit values.
+        dfp_adunit = dfp_adunit.replace(' ', '-');
+        dfp_adunit = dfp_adunit.replace(',', '-');
+
         // output debug information to console
         mmo_console = data.getQueryParam('google_console');
         if (mmo_console !== undefined) {
@@ -114,8 +127,8 @@ if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310171115:443264',
-            dfp_nmt_ads_version: '201310022226:443263',
+            dfp_nmt_mapping_version: '201310231359:443264',
+            dfp_nmt_ads_version: '201310231348:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
