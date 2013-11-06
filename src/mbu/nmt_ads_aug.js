@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201310231411:443263
+ * @version: 201311061212:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231358:443786
+ * mapping_version: 201311010710:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         adunitPrefixDomainMappings = [
@@ -54,6 +54,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
                                       {'homes\.augusta\.com': '/11365842/chronicle.augusta.com/homes'},
                                       {'hosted2\.ap\.org': '/11365842/chronicle.augusta.com/ap'},
                                       {'jobs\.augusta': '/11365842/chronicle.augusta.com/jobs'},
+ 									  {'augustajobs\.com': '/11365842/chronicle.augusta.com/jobs'},
                                       {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
                                       {'^m\.pfaug': '/11365842/m.chronicle.augusta.com'},
                                       {'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
@@ -63,7 +64,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
                                       {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
                               ];
 /***
- * common mappings: 201310231345:447642
+ * common mappings: 201311061212:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -121,8 +122,8 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         dfp_ccc = dfp_ccc.slice(0,40);
 
         // Google DFP does not allow certain characters for adunit values.
-        dfp_adunit = dfp_adunit.replace(' ', '-');
-        dfp_adunit = dfp_adunit.replace(',', '-');
+        dfp_adunit = dfp_adunit.replace(/\s/g, '-');
+        dfp_adunit = dfp_adunit.replace(/,/g, '-');
 
         // output debug information to console
         mmo_console = data.getQueryParam('google_console');
@@ -143,8 +144,8 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231358:443786',
-            dfp_nmt_ads_version: '201310231411:443263',
+            dfp_nmt_mapping_version: '201311010710:443786',
+            dfp_nmt_ads_version: '201311061212:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
