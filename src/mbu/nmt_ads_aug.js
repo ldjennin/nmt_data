@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201311010710:443786
+ * mapping_version: 201311141654:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'affiliate\.zap2it\.com': '/11365842/chronicle.augusta.com/things-do'},
+                                      {'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
                                       {'www\.augusta\.com': '/11365842/augusta.com'},
                                       {'augustafamily\.com': '/11365842/augustafamily.com'},
                                       {'augustamagazine\.com': '/11365842/augustamagazine.com'},
@@ -57,8 +58,9 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
  									  {'augustajobs\.com': '/11365842/chronicle.augusta.com/jobs'},
                                       {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
                                       {'^m\.pfaug': '/11365842/m.chronicle.augusta.com'},
-                                      {'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
                                       {'michaux\.augusta\.com': '/11365842/chronicle.augusta.com/sports/scott-michaux'},
+                                      {'newstimes\.augusta\.com': '/11365842/augusta.com/newstimes'},
+                                      {'pfchrdev\.': '/11365842/augusta.com/newstimes'},
                                       {'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
                                       {'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/spotted'},
                                       {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
@@ -145,7 +147,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201311010710:443786',
+            dfp_nmt_mapping_version: '201311141654:443786',
             dfp_nmt_ads_version: '201311071556:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

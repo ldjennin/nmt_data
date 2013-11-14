@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201311080921:443791
+ * mapping_version: 201311081331:443791
  */
 dfp_adunit_prefix = '/11365842/homernews.com';
         adunitPrefixDomainMappings = [
@@ -137,7 +137,7 @@ dfp_adunit_prefix = '/11365842/homernews.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201311080921:443791',
+            dfp_nmt_mapping_version: '201311081331:443791',
             dfp_nmt_ads_version: '201311071556:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
