@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201311141654:443786
+ * mapping_version: 201311141658:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         adunitPrefixDomainMappings = [
@@ -59,6 +59,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
                                       {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
                                       {'^m\.pfaug': '/11365842/m.chronicle.augusta.com'},
                                       {'michaux\.augusta\.com': '/11365842/chronicle.augusta.com/sports/scott-michaux'},
+                                      {'natoday\.augusta\.com': '/11365842/augusta.com/natoday'},
                                       {'newstimes\.augusta\.com': '/11365842/augusta.com/newstimes'},
                                       {'pfchrdev\.': '/11365842/augusta.com/newstimes'},
                                       {'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
@@ -147,7 +148,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201311141654:443786',
+            dfp_nmt_mapping_version: '201311141658:443786',
             dfp_nmt_ads_version: '201311071556:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
