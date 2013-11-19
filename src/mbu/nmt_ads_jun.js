@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231400:443790
+ * mapping_version: 201311191416:443790
  */
 dfp_adunit_prefix = '/11365842/juneauempire.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos.juneauempire.com': '/11365842/juneauempire.com/autos'},
+                                      {'capitalcityweekly.com': '/11365842/capitalcityweekly.com'},
                                       {'classifieds.juneauempire.com': '/11365842/juneauempire.com/classifieds'},
                                       {'events.juneauempire.com': '/11365842/juneauempire.com/events'},
                                       {'homes.juneauempire.com': '/11365842/juneauempire.com/homes'},
@@ -135,7 +136,7 @@ dfp_adunit_prefix = '/11365842/juneauempire.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231400:443790',
+            dfp_nmt_mapping_version: '201311191416:443790',
             dfp_nmt_ads_version: '201311071556:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
