@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231359:443787
+ * mapping_version: 201311201400:443787
  */
 dfp_adunit_prefix = '/11365842/cjonline.com';
         adunitPrefixDomainMappings = [
@@ -46,6 +46,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
                                       {'autos\.cjonline\.com': '/11365842/cjonline.com/autos'},
                                       {'classifieds\.cjonline\.com': '/11365842/cjonline.com/classifieds'},
                                       {'events\.cjonline\.com': '/11365842/cjonline.com/events'},
+                                      {'food\.topeka\.net': '/11365842/cjonline.com/foodtopeka'},
                                       {'homes\.cjonline\.com': '/11365842/cjonline.com/homes'},
                                       {'jobs\.cjonline': '/11365842/jobs.cjonline.com'},
                                       {'^m\.cjonline\.com': '/11365842/m.cjonline.com'},
@@ -136,7 +137,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231359:443787',
+            dfp_nmt_mapping_version: '201311201400:443787',
             dfp_nmt_ads_version: '201311071556:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
