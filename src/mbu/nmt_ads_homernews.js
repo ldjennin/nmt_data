@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201311071556:443263
+ * @version: 201311201453:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -115,7 +115,9 @@ dfp_adunit_prefix = '/11365842/homernews.com';
 
         // Google DFP does not allow certain characters for adunit values.
         dfp_adunit = dfp_adunit.replace(/\s/g, '-');
+        dfp_adunit = dfp_adunit.replace(/%20/g, '-');
         dfp_adunit = dfp_adunit.replace(/,/g, '-');
+        dfp_adunit = dfp_adunit.replace(/%2C/g, '-');
         dfp_adunit = dfp_adunit.replace(/'/g, '');
 
         // output debug information to console
@@ -138,7 +140,7 @@ dfp_adunit_prefix = '/11365842/homernews.com';
 
         return { // return object
             dfp_nmt_mapping_version: '201311081331:443791',
-            dfp_nmt_ads_version: '201311071556:443263',
+            dfp_nmt_ads_version: '201311201453:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
