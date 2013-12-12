@@ -59,7 +59,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
                                       {'unwind\.topeka\.net': '/11365842/cjonline.com/unwindtopeka'}
                               ];
 /***
- * common mappings: 201312111421:447642
+ * common mappings: 201312121604:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 

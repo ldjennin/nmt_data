@@ -102,7 +102,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                            {'^\/news\/blog$': 'xfinity'}
                    ];
 /***
- * common mappings: 201312111421:447642
+ * common mappings: 201312121604:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 

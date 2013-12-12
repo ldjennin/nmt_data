@@ -57,7 +57,7 @@ dfp_adunit_prefix = '/11365842/lubbockonline.com';
                                       {'legacy\.com': '/11365842/lubbockonline.com/obituaries'}
                               ];
 /***
- * common mappings: 201312111421:447642
+ * common mappings: 201312121604:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
