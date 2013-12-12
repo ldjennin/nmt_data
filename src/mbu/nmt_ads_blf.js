@@ -53,7 +53,7 @@ dfp_adunit_prefix = '/11365842/blufftontoday.com';
                                       {'legacy\.com': '/11365842/blufftontoday.com/obituaries'}
                               ];
 /***
- * common mappings: 201312121604:447642
+ * common mappings: 201312121606:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 

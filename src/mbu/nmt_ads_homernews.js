@@ -56,7 +56,7 @@ dfp_adunit_prefix = '/11365842/homernews.com';
                                       {'legacy\.com': '/11365842/homernews.com/obituaries'}
                               ];
 /***
- * common mappings: 201312121604:447642
+ * common mappings: 201312121606:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
