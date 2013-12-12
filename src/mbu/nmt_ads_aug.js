@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201311201453:443263
+ * @version: 201311201630:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -67,7 +67,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
                                       {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
                               ];
 /***
- * common mappings: 201311061212:447642
+ * common mappings: 201312111421:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -151,7 +151,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
 
         return { // return object
             dfp_nmt_mapping_version: '201311141700:443786',
-            dfp_nmt_ads_version: '201311201453:443263',
+            dfp_nmt_ads_version: '201311201630:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

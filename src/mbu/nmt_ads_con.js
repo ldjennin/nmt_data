@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201311201453:443263
+ * @version: 201311201630:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -61,7 +61,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
                                       {'womensinc\.net': '/11365842/thecabin.net/womensinc'}
                               ];
 /***
- * common mappings: 201311061212:447642
+ * common mappings: 201312111421:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -145,7 +145,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
 
         return { // return object
             dfp_nmt_mapping_version: '201310231359:443788',
-            dfp_nmt_ads_version: '201311201453:443263',
+            dfp_nmt_ads_version: '201311201630:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

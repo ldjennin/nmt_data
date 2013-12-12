@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201311201453:443263
+ * @version: 201311201630:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201311191632:443790
+ * mapping_version: 201311221250:443790
  */
 dfp_adunit_prefix = '/11365842/juneauempire.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos.juneauempire.com': '/11365842/juneauempire.com/autos'},
+                                      {'spotted\.capitalcityweekly\.com': '/11365842/capitalcityweekly.com/spotted'},
                                       {'capitalcityweekly.com': '/11365842/capitalcityweekly.com'},
                                       {'classifieds.juneauempire.com': '/11365842/juneauempire.com/classifieds'},
                                       {'events.juneauempire.com': '/11365842/juneauempire.com/events'},
@@ -55,7 +56,7 @@ dfp_adunit_prefix = '/11365842/juneauempire.com';
                                       {'legacy\.com': '/11365842/juneauempire.com/obituaries'}
                               ];
 /***
- * common mappings: 201311061212:447642
+ * common mappings: 201312111421:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -138,8 +139,8 @@ dfp_adunit_prefix = '/11365842/juneauempire.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201311191632:443790',
-            dfp_nmt_ads_version: '201311201453:443263',
+            dfp_nmt_mapping_version: '201311221250:443790',
+            dfp_nmt_ads_version: '201311201630:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

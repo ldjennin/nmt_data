@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201311201453:443263
+ * @version: 201311201630:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201311201400:443787
+ * mapping_version: 201312111411:443787
  */
 dfp_adunit_prefix = '/11365842/cjonline.com';
         adunitPrefixDomainMappings = [
@@ -47,16 +47,19 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
                                       {'classifieds\.cjonline\.com': '/11365842/cjonline.com/classifieds'},
                                       {'events\.cjonline\.com': '/11365842/cjonline.com/events'},
                                       {'food\.topeka\.net': '/11365842/cjonline.com/foodtopeka'},
+                                      {'holyground\.topeka\.net': '/11365842/cjonline.com/holyshoottopeka'},
                                       {'homes\.cjonline\.com': '/11365842/cjonline.com/homes'},
                                       {'jobs\.cjonline': '/11365842/jobs.cjonline.com'},
+                                      {'legacy\.com': '/11365842/cjonline.com/obituaries'},
                                       {'^m\.cjonline\.com': '/11365842/m.cjonline.com'},
                                       {'^m\.pftop': '/11365842/m.cjonline.com'},
                                       {'rentals\.': '/11365842/cjonline.com/rentals'},
+                                      {'splash\.topeka\.net': '/11365842/cjonline.com/splashtopeka'},
                                       {'spotted\.': '/11365842/cjonline.com/photos'},
-                                      {'legacy\.com': '/11365842/cjonline.com/obituaries'}
+                                      {'unwind\.topeka\.net': '/11365842/cjonline.com/unwindtopeka'}
                               ];
 /***
- * common mappings: 201311061212:447642
+ * common mappings: 201312111421:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -139,8 +142,8 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201311201400:443787',
-            dfp_nmt_ads_version: '201311201453:443263',
+            dfp_nmt_mapping_version: '201312111411:443787',
+            dfp_nmt_ads_version: '201311201630:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
