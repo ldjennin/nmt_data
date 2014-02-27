@@ -44,6 +44,7 @@ if (typeof NMTdata.data === 'undefined') {
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;")
                 .replace(/"/g, "&quot;")
+                .replace(/\W/g, "")
                 .replace(/'/g, "&#039;");
             },
             yearToAge: function (year) {

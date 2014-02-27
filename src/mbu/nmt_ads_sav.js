@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201311201630:443263
+ * @version: 201402261642:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201312121607:443265
+ * mapping_version: 201402271050:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -59,6 +59,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'savannahmagazine\.com': '/11365842/savannahmagazine.com'},
                                       {'spotted\.savannahnow\.com': '/11365842/savannahnow.com/spotted'},
                                       {'rentals\.savannahnow\.com': '/11365842/savannahnow.com/rentals'},
+                                      {'thebootandjetstream\.com': '/11365842/thebootandjetstream.com'},
                                       {'legacy\.com': '/11365842/savannahnow.com/obits'}
                               ];
         adunitPathMappings = [
@@ -102,6 +103,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                 dfp_adunit += '/' + data.pathnames[i].slice(0,100);
             }
         }
+
 
         // Process Path mappings for dfp_adunit
         dfp_adunit = data.processMapping(adunitPathMappings, window.location.pathname, dfp_adunit);
@@ -155,8 +157,8 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201312121607:443265',
-            dfp_nmt_ads_version: '201311201630:443263',
+            dfp_nmt_mapping_version: '201402271050:443265',
+            dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
