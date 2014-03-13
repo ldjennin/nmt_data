@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201312121701:443787
+ * mapping_version: 201403131404:443787
  */
 dfp_adunit_prefix = '/11365842/cjonline.com';
         adunitPrefixDomainMappings = [
@@ -59,6 +59,8 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
                                       {'spotted\.': '/11365842/cjonline.com/photos'},
                                       {'unwind\.topeka\.net': '/11365842/cjonline.com/unwindtopeka'}
                               ];
+
+        adunitPathMappings.push({'^\/realestate\/': '/homes'});
 /***
  * common mappings: 201312121606:447642
  */
@@ -144,7 +146,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201312121701:443787',
+            dfp_nmt_mapping_version: '201403131404:443787',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
