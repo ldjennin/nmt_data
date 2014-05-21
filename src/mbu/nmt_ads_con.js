@@ -61,7 +61,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
                                       {'womensinc\.net': '/11365842/thecabin.net/womensinc'}
                               ];
 /***
- * common mappings: 201312121606:447642
+ * common mappings: 201404031011:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 

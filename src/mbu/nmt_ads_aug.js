@@ -72,7 +72,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
                                       {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
                               ];
 /***
- * common mappings: 201312121606:447642
+ * common mappings: 201404031011:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 

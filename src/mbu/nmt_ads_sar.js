@@ -66,7 +66,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
                               {'^\/news\/school-news\/': '/news/schoolnews'}
                       ];
 /***
- * common mappings: 201312121606:447642
+ * common mappings: 201404031011:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 

@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201403201321:443787
+ * mapping_version: 201403201710:443787
  */
 dfp_adunit_prefix = '/11365842/cjonline.com';
         adunitPrefixDomainMappings = [
@@ -63,7 +63,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
         adunitPathMappings.push({'^\/realestate\/': '/homes'});
         adunitURLMappings.push({'legacy\.com\/celebration\/': '/celebrations'});
 /***
- * common mappings: 201312121606:447642
+ * common mappings: 201404031011:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -147,7 +147,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201403201321:443787',
+            dfp_nmt_mapping_version: '201403201710:443787',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

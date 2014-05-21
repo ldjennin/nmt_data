@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201402271050:443265
+ * mapping_version: 201404031009:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -73,7 +73,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                            {'^\/homepageSMN$': 'homepage'}
                    ];
 /***
- * common mappings: 201312121606:447642
+ * common mappings: 201404031011:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -157,7 +157,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201402271050:443265',
+            dfp_nmt_mapping_version: '201404031009:443265',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

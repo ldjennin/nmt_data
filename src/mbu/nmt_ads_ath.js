@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231319:443762
+ * mapping_version: 201405211427:443762
  */
 dfp_adunit_prefix = '/11365842/onlineathens.com';
         adunitPrefixDomainMappings = [
@@ -49,12 +49,13 @@ dfp_adunit_prefix = '/11365842/onlineathens.com';
                                       {'events.onlineathens.com': '/11365842/onlineathens.com/events'},
                                       {'homes.onlineathens.com': '/11365842/onlineathens.com/homes'},
                                       {'jobs\.': '/11365842/onlineathens.com/jobs'},
+                                      {'spotted\.': '/11365842/onlineathens.com/spotted'},
                                       {'^m\.onlineathens\.com': '/11365842/m.onlineathens.com'},
                                       {'^m\.pfath': '/11365842/m.onlineathens.com'},
                                       {'legacy\.com': '/11365842/onlineathens.com/obituaries'}
                               ];
 /***
- * common mappings: 201312121606:447642
+ * common mappings: 201404031011:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -138,7 +139,7 @@ dfp_adunit_prefix = '/11365842/onlineathens.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231319:443762',
+            dfp_nmt_mapping_version: '201405211427:443762',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
