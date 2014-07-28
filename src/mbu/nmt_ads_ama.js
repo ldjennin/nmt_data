@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231319:443785
+ * mapping_version: 201407281014:443785
  */
 dfp_adunit_prefix = '/11365842/amarillo.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'amarillobrides365\.com': '/11365842/amarillobrides365.com'},
+                                      {'amarillomagonline\.com': '/11365842/amarillomagonline.com'},
                                       {'autos\.amarillo\.com': '/11365842/amarillo.com/autos'},
                                       {'classifieds\.amarillo\.com': '/11365842/amarillo.com/classifieds'},
                                       {'events\.amarillo\.com': '/11365842/amarillo.com/events'},
@@ -141,7 +142,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231319:443785',
+            dfp_nmt_mapping_version: '201407281014:443785',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
