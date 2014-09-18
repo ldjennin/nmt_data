@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201404031009:443265
+ * mapping_version: 201409181729:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos\.coastalautos\.com': '/11365842/savannahnow.com/autos'},
+                                      {'bis\.yelvington\.com': '/11365842/businessinsavannah.com'},
                                       {'businessinsavannah\.com': '/11365842/businessinsavannah.com'},
                                       {'classifieds\.savannahnow\.com': '/11365842/savannahnow.com/classifieds'},
                                       {'class\.savannahnow\.com': '/11365842/savannahnow.com/classifieds'},
@@ -157,7 +158,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201404031009:443265',
+            dfp_nmt_mapping_version: '201409181729:443265',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
