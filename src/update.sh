@@ -1,6 +1,6 @@
 #!/bin/bash
 
-props=( ama ath aug blf bra cjo con ecolatino homernews jax jun ken lub pineandlakes sar sav )
+props=( ama ath aug blf cjo con ecolatino homernews jax jun ken lub sar sav )
 
 for prop in ${props[@]}
 do
