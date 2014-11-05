@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201409191404:444002
+ * mapping_version: 201411051156:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com';
         adunitPrefixDomainMappings = [
@@ -58,6 +58,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                                       {'^m\.jacksonville\.com': '/11365842/m.jacksonville.com'},
                                       {'^m\.pfjax': '/11365842/m.jacksonville.com'},
                                       {'mayportmirror': '/11365842/mayportmirror.com'},
+                                      {'members\.pfjaxdev\.': '/11365842/jacksonville.com'},
                                       {'members\.': '/11365842/jacksonville.com/members'},
                                       {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
                                       {'zap2it\.com': '/11365842/jacksonville.com/entertainment'},
@@ -186,7 +187,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201409191404:444002',
+            dfp_nmt_mapping_version: '201411051156:444002',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
