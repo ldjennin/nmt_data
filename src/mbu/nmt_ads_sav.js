@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201409181839:443265
+ * mapping_version: 201501231116:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -55,6 +55,8 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'physicianguide\.': '/11365842/savannahnow.com/physicianguide'},
                                       {'^m\.savannahnow\.com': '/11365842/m.savannahnow.com'},
                                       {'^m\.pfsav': '/11365842/m.savannahnow.com'},
+                                      {'^www\.jaspersuntimes\.com': '/11365842/savannahnow.com/jaspersuntimes'},
+                                      {'jaspercountysun\.com': '/11365842/savannahnow.com/jaspersuntimes'},
                                       {'jobs\.savannahnow\.com': '/11365842/savannahnow.com/jobs'},
                                       {'savannahhomesforsale\.com': '/11365842/savannahhomesforsale.com'},
                                       {'savannahmagazine\.com': '/11365842/savannahmagazine.com'},
@@ -158,7 +160,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201409181839:443265',
+            dfp_nmt_mapping_version: '201501231116:443265',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
