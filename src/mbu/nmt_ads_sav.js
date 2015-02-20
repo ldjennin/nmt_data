@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201501231351:443265
+ * mapping_version: 201502201432:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -66,12 +66,17 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'thebootandjetstream\.com': '/11365842/thebootandjetstream.com'},
                                       {'legacy\.com': '/11365842/savannahnow.com/obits'}
                               ];
+
         adunitPathMappings = [
                               // MBU custom mappings
                               {'^\/fast-physicianguide.php': '/physicianguide'},
                               // Common mappings
                               {'^\/homepageSMN$': '/homepage'}
                       ];
+
+adunitPathMappings.push({'\/effinghamnow$': '/effinghamnow/homepage'});
+adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
+
         cccPathMappings = [
                            // MBU custom mappings
                            {'^\/homepageSMN$': 'homepage'}
@@ -161,7 +166,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201501231351:443265',
+            dfp_nmt_mapping_version: '201502201432:443265',
             dfp_nmt_ads_version: '201402261642:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
