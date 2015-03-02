@@ -51,6 +51,7 @@ dfp_adunit_prefix = '/11365842/onlineathens.com';
                                       {'jobs\.': '/11365842/onlineathens.com/jobs'},
                                       {'spotted\.': '/11365842/onlineathens.com/spotted'},
                                       {'^m\.onlineathens\.com': '/11365842/m.onlineathens.com'},
+                                      {'^m\.wap\.onlineathens\.com': '/11365842/m.onlineathens.com'},
                                       {'^m\.pfath': '/11365842/m.onlineathens.com'},
                                       {'^m\.wap\.pfath': '/11365842/m.onlineathens.com'},
                                       {'legacy\.com': '/11365842/onlineathens.com/obituaries'}

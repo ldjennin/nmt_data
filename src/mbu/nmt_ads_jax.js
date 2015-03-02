@@ -56,13 +56,15 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                                       {'jobs\.': '/11365842/jacksonville.com/jobs'},
                                       {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
                                       {'^m\.jacksonville\.com': '/11365842/m.jacksonville.com'},
+                                      {'^m\.wap\.jacksonville\.com': '/11365842/m.jacksonville.com'},
                                       {'^m\.pfjax': '/11365842/m.jacksonville.com'},
+                                      {'^m\.wap\.pfjax': '/11365842/m.jacksonville.com'},
                                       {'mayportmirror': '/11365842/mayportmirror.com'},
                                       {'members\.pfjaxdev\.': '/11365842/jacksonville.com'},
                                       {'members\.': '/11365842/jacksonville.com/members'},
                                       {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
                                       {'zap2it\.com': '/11365842/jacksonville.com/entertainment'},
-                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
+                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'} 
                               ];
 
         adunitPathMappings = [
