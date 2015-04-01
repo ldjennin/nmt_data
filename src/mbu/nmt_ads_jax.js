@@ -64,7 +64,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                                       {'members\.': '/11365842/jacksonville.com/members'},
                                       {'legacy\.com': '/11365842/jacksonville.com/obituaries'},
                                       {'zap2it\.com': '/11365842/jacksonville.com/entertainment'},
-                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'}
+                                      {'photos\.jacksonville\.com': '/11365842/jacksonville.com/photos'} 
                               ];
 
         adunitPathMappings = [
