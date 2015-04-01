@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201402261642:443263
+ * @version: 201503041348:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201502031036:443786
+ * mapping_version: 201503031619:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         adunitPrefixDomainMappings = [
@@ -53,10 +53,9 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
                                       {'booked\.augusta\.com': '/11365842/chronicle.augusta.com/booked'},
                                       {'classifieds\.augusta\.com': '/11365842/chronicle.augusta.com/classifieds'},
                                       {'events\.augusta\.com': '/11365842/chronicle.augusta.com/events'},
-                                      {'www\.hamptoncountyguardian\.com': '/11365842/chronicle.augusta.com/hamptoncountyguardian'},
+                                      {'\.hamptoncountyguardian\.com': '/11365842/chronicle.augusta.com/hamptoncountyguardian'},
                                       {'homes\.augusta\.com': '/11365842/chronicle.augusta.com/homes'},
                                       {'hosted2\.ap\.org': '/11365842/chronicle.augusta.com/ap'},
-                                      {'www\.jaspercountysun\.com': '/11365842/chronicle.augusta.com/jaspercountysun'},
                                       {'jobs\.augusta': '/11365842/chronicle.augusta.com/jobs'},
  									  {'augustajobs\.com': '/11365842/chronicle.augusta.com/jobs'},
                                       {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
@@ -67,12 +66,13 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
                                       {'pfchrdev\.': '/11365842/augusta.com/newstimes'},
                                       {'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
                                       {'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/spotted'},
-                                      {'www\.thepeoplesentinel\.com': '/11365842/chronicle.augusta.com/thepeoplesentinel'},
-                                      {'www\.sylvaniatelephone\.com': '/11365842/chronicle.augusta.com/sylvaniatelephone'},
+                                      {'\.thenewsandfarmer\.com': '/11365842/chronicle.augusta.com/thenewsandfarmer'},
+                                      {'\.thepeoplesentinel\.com': '/11365842/chronicle.augusta.com/thepeoplesentinel'},
+                                      {'\.sylvaniatelephone\.com': '/11365842/chronicle.augusta.com/sylvaniatelephone'},
                                       {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
                               ];
 /***
- * common mappings: 201404031011:447642
+ * common mappings: 201504011148:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -85,6 +85,8 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         cccURLMappings.push({'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
         cccURLMappings.push({'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
 
+        cccURLMappings.push({'spotted.+\/mediadetail\/': NMTdata.data.getQueryParam("gId")});
+        cccURLMappings.push({'spotted.+\/galleries\?': NMTdata.data.getQueryParam("groupId")});
         cccPathMappings.push({'^\/$': 'homepage'});
 ////////////////////////////////////////////////////////////////////////
 
@@ -156,8 +158,8 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201502031036:443786',
-            dfp_nmt_ads_version: '201402261642:443263',
+            dfp_nmt_mapping_version: '201503031619:443786',
+            dfp_nmt_ads_version: '201503041348:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

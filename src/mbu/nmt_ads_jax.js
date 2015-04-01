@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201402261642:443263
+ * @version: 201503041348:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201501281443:444002
+ * mapping_version: 201503031618:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com';
         adunitPrefixDomainMappings = [
@@ -56,7 +56,9 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                                       {'jobs\.': '/11365842/jacksonville.com/jobs'},
                                       {'kingsbayperiscope': '/11365842/kingsbayperiscope.com'},
                                       {'^m\.jacksonville\.com': '/11365842/m.jacksonville.com'},
+                                      {'^m\.wap\.jacksonville\.com': '/11365842/m.jacksonville.com'},
                                       {'^m\.pfjax': '/11365842/m.jacksonville.com'},
+                                      {'^m\.wap\.pfjax': '/11365842/m.jacksonville.com'},
                                       {'mayportmirror': '/11365842/mayportmirror.com'},
                                       {'members\.pfjaxdev\.': '/11365842/jacksonville.com'},
                                       {'members\.': '/11365842/jacksonville.com/members'},
@@ -104,7 +106,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                            {'^\/news\/blog$': 'xfinity'}
                    ];
 /***
- * common mappings: 201404031011:447642
+ * common mappings: 201504011148:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -117,6 +119,8 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
         cccURLMappings.push({'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
         cccURLMappings.push({'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
 
+        cccURLMappings.push({'spotted.+\/mediadetail\/': NMTdata.data.getQueryParam("gId")});
+        cccURLMappings.push({'spotted.+\/galleries\?': NMTdata.data.getQueryParam("groupId")});
         cccPathMappings.push({'^\/$': 'homepage'});
 ////////////////////////////////////////////////////////////////////////
 
@@ -188,8 +192,8 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201501281443:444002',
-            dfp_nmt_ads_version: '201402261642:443263',
+            dfp_nmt_mapping_version: '201503031618:444002',
+            dfp_nmt_ads_version: '201503041348:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

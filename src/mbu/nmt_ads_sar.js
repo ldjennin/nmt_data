@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201402261642:443263
+ * @version: 201503041348:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -66,7 +66,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
                               {'^\/news\/school-news\/': '/news/schoolnews'}
                       ];
 /***
- * common mappings: 201404031011:447642
+ * common mappings: 201504011148:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -79,6 +79,8 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
         cccURLMappings.push({'\/clicknbuy\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
         cccURLMappings.push({'\/searchresults\.aspx': NMTdata.data.getQueryParam("pcatid") || paperCategoryID});
 
+        cccURLMappings.push({'spotted.+\/mediadetail\/': NMTdata.data.getQueryParam("gId")});
+        cccURLMappings.push({'spotted.+\/galleries\?': NMTdata.data.getQueryParam("groupId")});
         cccPathMappings.push({'^\/$': 'homepage'});
 ////////////////////////////////////////////////////////////////////////
 
@@ -151,7 +153,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
 
         return { // return object
             dfp_nmt_mapping_version: '201310231408:443784',
-            dfp_nmt_ads_version: '201402261642:443263',
+            dfp_nmt_ads_version: '201503041348:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
