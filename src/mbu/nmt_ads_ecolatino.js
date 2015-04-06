@@ -47,7 +47,7 @@ dfp_adunit_prefix = '/11365842/ecolatino.com';
 // remove /en/ path element from pathnames.
 if (data.pathnames[0] == 'en') { data.pathnames.shift(); }
 /***
- * common mappings: 201504011148:447642
+ * common mappings: 201504021017:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
