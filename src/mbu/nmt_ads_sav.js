@@ -82,7 +82,7 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
                            {'^\/homepageSMN$': 'homepage'}
                    ];
 /***
- * common mappings: 201504021017:447642
+ * common mappings: 201504241137:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -97,6 +97,8 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
 
         cccURLMappings.push({'spotted.+\/mediadetail\/': NMTdata.data.getQueryParam("gId")});
         cccURLMappings.push({'spotted.+\/galleries\?': NMTdata.data.getQueryParam("groupId")});
+        adunitURLMappings.push({'adiciotest\.': '/homes'});
+
         cccPathMappings.push({'^\/$': 'homepage'});
 ////////////////////////////////////////////////////////////////////////
 

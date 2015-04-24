@@ -61,7 +61,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
                                       {'womensinc\.net': '/11365842/thecabin.net/womensinc'}
                               ];
 /***
- * common mappings: 201504021017:447642
+ * common mappings: 201504241137:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -76,6 +76,8 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
 
         cccURLMappings.push({'spotted.+\/mediadetail\/': NMTdata.data.getQueryParam("gId")});
         cccURLMappings.push({'spotted.+\/galleries\?': NMTdata.data.getQueryParam("groupId")});
+        adunitURLMappings.push({'adiciotest\.': '/homes'});
+
         cccPathMappings.push({'^\/$': 'homepage'});
 ////////////////////////////////////////////////////////////////////////
 
