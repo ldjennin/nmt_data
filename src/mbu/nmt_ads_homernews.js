@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201503041348:443263
+ * @version: 201507260847:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -56,7 +56,7 @@ dfp_adunit_prefix = '/11365842/homernews.com';
                                       {'legacy\.com': '/11365842/homernews.com/obituaries'}
                               ];
 /***
- * common mappings: 201504241137:447642
+ * common mappings: 201504241333:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -124,6 +124,15 @@ dfp_adunit_prefix = '/11365842/homernews.com';
         dfp_adunit = dfp_adunit.replace(/,/g, '-');
         dfp_adunit = dfp_adunit.replace(/%2C/g, '-');
         dfp_adunit = dfp_adunit.replace(/'/g, '');
+        dfp_adunit = dfp_adunit.replace(/ñ/ig, '');
+        dfp_adunit = dfp_adunit.replace(/á/ig, '');
+        dfp_adunit = dfp_adunit.replace(/é/ig, '');
+        dfp_adunit = dfp_adunit.replace(/í/ig, '');
+        dfp_adunit = dfp_adunit.replace(/ó/ig, '');
+        dfp_adunit = dfp_adunit.replace(/ú/ig, '');
+        dfp_adunit = dfp_adunit.replace(/ü/ig, '');
+        dfp_adunit = dfp_adunit.replace(/¿/ig, '');
+        dfp_adunit = dfp_adunit.replace(/¡/ig, '');
 
         // output debug information to console
         mmo_console = data.getQueryParam('google_console');
@@ -145,7 +154,7 @@ dfp_adunit_prefix = '/11365842/homernews.com';
 
         return { // return object
             dfp_nmt_mapping_version: '201311081331:443791',
-            dfp_nmt_ads_version: '201503041348:443263',
+            dfp_nmt_ads_version: '201507260847:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

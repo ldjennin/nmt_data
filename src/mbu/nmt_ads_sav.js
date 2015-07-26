@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201503041348:443263
+ * @version: 201507260847:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -82,7 +82,7 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
                            {'^\/homepageSMN$': 'homepage'}
                    ];
 /***
- * common mappings: 201504241137:447642
+ * common mappings: 201504241333:447642
  */
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -150,6 +150,15 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
         dfp_adunit = dfp_adunit.replace(/,/g, '-');
         dfp_adunit = dfp_adunit.replace(/%2C/g, '-');
         dfp_adunit = dfp_adunit.replace(/'/g, '');
+        dfp_adunit = dfp_adunit.replace(/ñ/ig, '');
+        dfp_adunit = dfp_adunit.replace(/á/ig, '');
+        dfp_adunit = dfp_adunit.replace(/é/ig, '');
+        dfp_adunit = dfp_adunit.replace(/í/ig, '');
+        dfp_adunit = dfp_adunit.replace(/ó/ig, '');
+        dfp_adunit = dfp_adunit.replace(/ú/ig, '');
+        dfp_adunit = dfp_adunit.replace(/ü/ig, '');
+        dfp_adunit = dfp_adunit.replace(/¿/ig, '');
+        dfp_adunit = dfp_adunit.replace(/¡/ig, '');
 
         // output debug information to console
         mmo_console = data.getQueryParam('google_console');
@@ -171,7 +180,7 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
 
         return { // return object
             dfp_nmt_mapping_version: '201502201616:443265',
-            dfp_nmt_ads_version: '201503041348:443263',
+            dfp_nmt_ads_version: '201507260847:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
