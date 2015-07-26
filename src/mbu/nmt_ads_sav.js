@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201507260847:443263
+ * @version: 201507260903:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -159,6 +159,7 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
         dfp_adunit = dfp_adunit.replace(/ü/ig, '');
         dfp_adunit = dfp_adunit.replace(/¿/ig, '');
         dfp_adunit = dfp_adunit.replace(/¡/ig, '');
+        dfp_adunit = dfp_adunit.replace(/%/g, '');
 
         // output debug information to console
         mmo_console = data.getQueryParam('google_console');
@@ -180,7 +181,7 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
 
         return { // return object
             dfp_nmt_mapping_version: '201502201616:443265',
-            dfp_nmt_ads_version: '201507260847:443263',
+            dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
