@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201311081331:443791
+ * mapping_version: 201508181600:443791
  */
 dfp_adunit_prefix = '/11365842/homernews.com';
         adunitPrefixDomainMappings = [
@@ -48,6 +48,7 @@ dfp_adunit_prefix = '/11365842/homernews.com';
                                       {'events.homernews.com': '/11365842/homernews.com/events'},
                                       {'homes.homernews.com': '/11365842/homernews.com/homes'},
                                       {'homeralaska\.com': '/11365842/homeralaska.com'},
+                                      {'6iksudd\.morris\.cloudbackend\.net': '/11365842/homeralaska.com'},
                                       {'homeralaska\.drupalgardens\.com': '/11365842/homeralaska.com'},
                                       {'jobs\.homernews': '/11365842/homernews.com/jobs'},
                                       {'^m\.homernews\.com': '/11365842/m.homernews.com'},
@@ -154,7 +155,7 @@ dfp_adunit_prefix = '/11365842/homernews.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201311081331:443791',
+            dfp_nmt_mapping_version: '201508181600:443791',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
