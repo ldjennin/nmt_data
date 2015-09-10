@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201312121607:443790
+ * mapping_version: 201509101352:443790
  */
 dfp_adunit_prefix = '/11365842/juneauempire.com';
         adunitPrefixDomainMappings = [
@@ -48,6 +48,8 @@ dfp_adunit_prefix = '/11365842/juneauempire.com';
                                       {'capitalcityweekly.com': '/11365842/capitalcityweekly.com'},
                                       {'classifieds.juneauempire.com': '/11365842/juneauempire.com/classifieds'},
                                       {'events.juneauempire.com': '/11365842/juneauempire.com/events'},
+                                      {'adiciotest.alaskakeylistings.com': '/11365842/juneauempire.com/homes'},
+                                      {'homes.alaskakeylistings.com': '/11365842/juneauempire.com/homes'},
                                       {'homes.juneauempire.com': '/11365842/juneauempire.com/homes'},
                                       {'jobs\.juneauempire': '/11365842/juneauempire.com/jobs'},
                                       {'^m\.juneauempire\.com': '/11365842/m.juneauempire.com'},
@@ -154,7 +156,7 @@ dfp_adunit_prefix = '/11365842/juneauempire.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201312121607:443790',
+            dfp_nmt_mapping_version: '201509101352:443790',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
