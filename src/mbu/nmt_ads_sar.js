@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231408:443784
+ * mapping_version: 201510271357:443784
  */
 dfp_adunit_prefix = '/11365842/staugustine.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos.staugustine.com': '/11365842/autos.staugustine.com'},
+                                      {'saintaugustinecars.motominer.net': '/11365842/autos.staugustine.com'},
                                       {'classifieds.staugustine.com': '/11365842/staugustine.com/classifieds'},
                                       {'events.staugustine.com': '/11365842/staugustine.com/events'},
                                       {'homes.staugustine.com': '/11365842/staugustine.com/homes'},
@@ -164,7 +165,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231408:443784',
+            dfp_nmt_mapping_version: '201510271357:443784',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
