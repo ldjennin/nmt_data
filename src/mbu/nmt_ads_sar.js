@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201510271357:443784
+ * mapping_version: 201510271445:443784
  */
 dfp_adunit_prefix = '/11365842/staugustine.com';
         adunitPrefixDomainMappings = [
@@ -165,7 +165,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201510271357:443784',
+            dfp_nmt_mapping_version: '201510271445:443784',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
