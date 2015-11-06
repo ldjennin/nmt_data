@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201503031618:444002
+ * mapping_version: 201511061346:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos\.jacksonville.com': '/11365842/jacksonville.com/autos'},
+                                      {'autosjacksonville\.motominer\.net': '/11365842/jacksonville.com/autos'},
                                       {'classifieds\.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
                                       {'affiliate\.zap2it\.com': '/11365842/jacksonville.com/entertainment'},
                                       {'events\.jacksonville.com': '/11365842/jacksonville.com/events'},
@@ -204,7 +205,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201503031618:444002',
+            dfp_nmt_mapping_version: '201511061346:444002',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
