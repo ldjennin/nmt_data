@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201407281019:443785
+ * mapping_version: 201511301024:443785
  */
 dfp_adunit_prefix = '/11365842/amarillo.com';
         adunitPrefixDomainMappings = [
@@ -46,6 +46,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com';
                                       {'amarillobrides365\.com': '/11365842/amarillobrides365.com'},
                                       {'amarillomagonline\.com': '/11365842/amarillomagonline.com'},
                                       {'autos\.amarillo\.com': '/11365842/amarillo.com/autos'},
+                                      {'amarillocars\.motominer\.net': '/11365842/amarillo.com/autos'},
                                       {'classifieds\.amarillo\.com': '/11365842/amarillo.com/classifieds'},
                                       {'events\.amarillo\.com': '/11365842/amarillo.com/events'},
                                       {'everythingamarillo\.com': '/11365842/amarillo.com/everythingamarillo'},
@@ -156,7 +157,7 @@ dfp_adunit_prefix = '/11365842/amarillo.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201407281019:443785',
+            dfp_nmt_mapping_version: '201511301024:443785',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
