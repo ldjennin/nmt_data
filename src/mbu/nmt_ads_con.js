@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231359:443788
+ * mapping_version: 201511301233:443788
  */
 dfp_adunit_prefix = '/11365842/thecabin.net';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos\.thecabin\.net': '/11365842/thecabin.net/autos'},
+                                      {'conwaycars\.motominer\.net': '/11365842/thecabin.net/autos'},
                                       {'classifieds\.thecabin\.net': '/11365842/thecabin.net/classifieds'},
                                       {'conwaypedia\.net': '/11365842/thecabin.net/conwaypedia'},
                                       {'events\.thecabin\.net': '/11365842/thecabin.net/events'},
@@ -159,7 +160,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231359:443788',
+            dfp_nmt_mapping_version: '201511301233:443788',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
