@@ -37,13 +37,14 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231400:443266
+ * mapping_version: 201511301310:443266
  */
 dfp_adunit_prefix = '/11365842/lubbockonline.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
                                       {'autos\.lubbockonline\.com': '/11365842/lubbockonline.com/autos'},
+                                      {'lubbockcars\.motominer\.net': '/11365842/lubbockonline.com/autos'},
                                       {'classifieds\.lubbockonline\.com': '/11365842/lubbockonline.com/classifieds'},
                                       {'events\.lubbockonline\.com': '/11365842/lubbockonline.com/events'},
                                       {'homes\.lubbockonline\.com': '/11365842/lubbockonline.com/homes'},
@@ -155,7 +156,7 @@ dfp_adunit_prefix = '/11365842/lubbockonline.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231400:443266',
+            dfp_nmt_mapping_version: '201511301310:443266',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
