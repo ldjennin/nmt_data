@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201510271356:443265
+ * mapping_version: 201512080915:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -55,6 +55,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'dosavannah\.com': '/11365842/savannahnow.com/entertainment'},
                                       {'events\.savannahnow\.com': '/11365842/savannahnow.com/events'},
                                       {'giftguide\.': '/11365842/giftguide.savannahnow.com'},
+                                      {'health\.': '/11365842/savannahnow.com/health'},
                                       {'physicianguide\.': '/11365842/savannahnow.com/physicianguide'},
                                       {'^m\.savannahnow\.com': '/11365842/m.savannahnow.com'},
                                       {'^m\.pfsav': '/11365842/m.savannahnow.com'},
@@ -182,7 +183,7 @@ adunitPathMappings.push({'\/bryancountynow$': '/bryancountynow/homepage'});
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201510271356:443265',
+            dfp_nmt_mapping_version: '201512080915:443265',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
