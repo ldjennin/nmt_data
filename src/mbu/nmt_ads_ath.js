@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201601131232:443762
+ * mapping_version: 201601191836:443762
  */
 dfp_adunit_prefix = '/11365842/onlineathens.com';
         adunitPrefixDomainMappings = [
@@ -45,6 +45,7 @@ dfp_adunit_prefix = '/11365842/onlineathens.com';
                                       // MBU custom mappings
                                       {'aroundhereonline\.com': '/11365842/aroundhereonline.com'},
                                       {'autos.onlineathens.com': '/11365842/onlineathens.com/autos'},
+                                      {'autosathens.motominer.net': '/11365842/onlineathens.com/autos'},
                                       {'autosathens.motominer.net': '/11365842/onlineathens.com/autos'},
                                       {'classifieds.onlineathens.com': '/11365842/onlineathens.com/classifieds'},
                                       {'events.onlineathens.com': '/11365842/onlineathens.com/events'},
@@ -156,7 +157,7 @@ dfp_adunit_prefix = '/11365842/onlineathens.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201601131232:443762',
+            dfp_nmt_mapping_version: '201601191836:443762',
             dfp_nmt_ads_version: '201507260903:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
