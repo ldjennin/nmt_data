@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201507260903:443263
+ * @version: 201605121425:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,42 +37,46 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201511181245:443786
+ * mapping_version: 201605311120:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'affiliate\.zap2it\.com': '/11365842/chronicle.augusta.com/things-do'},
-                                      {'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
-                                      {'www\.augusta\.com': '/11365842/augusta.com'},
-                                      {'admin\.augusta\.com': '/11365842/augusta.com'},
-                                      {'golfhistory\.augusta\.com': '/11365842/augusta.com'},
-                                      {'augustafamily\.com': '/11365842/augustafamily.com'},
-                                      {'augustamagazine\.com': '/11365842/augustamagazine.com'},
-                                      {'autos\.augusta\.com': '/11365842/chronicle.augusta.com/autos'},
-                                      {'augustacars\.motominer\.net': '/11365842/chronicle.augusta.com/autos'},
-                                      {'booked\.augusta\.com': '/11365842/chronicle.augusta.com/booked'},
-                                      {'classifieds\.augusta\.com': '/11365842/chronicle.augusta.com/classifieds'},
-                                      {'events\.augusta\.com': '/11365842/chronicle.augusta.com/events'},
-                                      {'\.hamptoncountyguardian\.com': '/11365842/chronicle.augusta.com/hamptoncountyguardian'},
-                                      {'homes\.augusta\.com': '/11365842/chronicle.augusta.com/homes'},
-                                      {'hosted2\.ap\.org': '/11365842/chronicle.augusta.com/ap'},
-                                      {'jobs\.augusta': '/11365842/chronicle.augusta.com/jobs'},
- 									  {'augustajobs\.com': '/11365842/chronicle.augusta.com/jobs'},
-                                      {'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
-                                      {'^m\.pfaug': '/11365842/m.chronicle.augusta.com'},
-                                      {'michaux\.augusta\.com': '/11365842/chronicle.augusta.com/sports/scott-michaux'},
-                                      {'natoday\.augusta\.com': '/11365842/natoday.augusta.com'},
-                                      {'newstimes\.augusta\.com': '/11365842/newstimes.augusta.com'},
-                                      {'pfchrdev\.': '/11365842/augusta.com/newstimes'},
-                                      {'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
-                                      {'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/spotted'},
-                                      {'\.thenewsandfarmer\.com': '/11365842/chronicle.augusta.com/thenewsandfarmer'},
-                                      {'\.thepeoplesentinel\.com': '/11365842/chronicle.augusta.com/thepeoplesentinel'},
-                                      {'\.sylvaniatelephone\.com': '/11365842/chronicle.augusta.com/sylvaniatelephone'},
-                                      {'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'}
-                              ];
+	{'admin\.augusta\.com': '/11365842/augusta.com'},
+	{'affiliate\.zap2it\.com': '/11365842/chronicle.augusta.com/things-do'},
+	{'apartments\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
+	{'augustacars\.motominer\.net': '/11365842/chronicle.augusta.com/autos'},
+	{'augustafamily\.com': '/11365842/augustafamily.com'},
+	{'augustajobs\.com': '/11365842/chronicle.augusta.com/jobs'},
+	{'augustamagazine\.com': '/11365842/augustamagazine.com'},
+	{'autos\.augusta\.com': '/11365842/chronicle.augusta.com/autos'},
+	{'beta\.chronicle\.augusta\.com': '/11365842/msms.chronicle.augusta.com'},
+	{'booked\.augusta\.com': '/11365842/chronicle.augusta.com/booked'},
+	{'classifieds\.augusta\.com': '/11365842/chronicle.augusta.com/classifieds'},
+	{'dev\.chronicle\.augusta\.com': '/11365842/msms.chronicle.augusta.com'},
+	{'events\.augusta\.com': '/11365842/chronicle.augusta.com/events'},
+	{'golfhistory\.augusta\.com': '/11365842/augusta.com'},
+	{'homes\.augusta\.com': '/11365842/chronicle.augusta.com/homes'},
+	{'hosted2\.ap\.org': '/11365842/chronicle.augusta.com/ap'},
+	{'jobs\.augusta': '/11365842/chronicle.augusta.com/jobs'},
+	{'legacy\.com': '/11365842/chronicle.augusta.com/obituaries'},
+	{'michaux\.augusta\.com': '/11365842/chronicle.augusta.com/sports/scott-michaux'},
+	{'natoday\.augusta\.com': '/11365842/natoday.augusta.com'},
+	{'newstimes\.augusta\.com': '/11365842/newstimes.augusta.com'},
+	{'pfchrdev\.': '/11365842/augusta.com/newstimes'},
+	{'prod\.chronicle\.augusta\.com': '/11365842/msms.chronicle.augusta.com'},
+	{'qa\.chronicle\.augusta\.com': '/11365842/msms.chronicle.augusta.com'},
+	{'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
+	{'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/spotted'},
+	{'www\.augusta\.com': '/11365842/augusta.com'},
+	{'\.hamptoncountyguardian\.com': '/11365842/chronicle.augusta.com/hamptoncountyguardian'},
+	{'\.sylvaniatelephone\.com': '/11365842/chronicle.augusta.com/sylvaniatelephone'},
+	{'\.thenewsandfarmer\.com': '/11365842/chronicle.augusta.com/thenewsandfarmer'},
+	{'\.thepeoplesentinel\.com': '/11365842/chronicle.augusta.com/thepeoplesentinel'},
+	{'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
+	{'^m\.pfaug': '/11365842/m.chronicle.augusta.com'}
+];
 /***
  * common mappings: 201504241333:447642
  */
@@ -172,8 +176,8 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201511181245:443786',
-            dfp_nmt_ads_version: '201507260903:443263',
+            dfp_nmt_mapping_version: '201605311120:443786',
+            dfp_nmt_ads_version: '201605121425:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
