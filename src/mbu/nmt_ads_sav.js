@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201604250709:443265
+ * mapping_version: 201606160630:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -69,7 +69,8 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'spotted\.savannahnow\.com': '/11365842/savannahnow.com/spotted'},
                                       {'rentals\.savannahnow\.com': '/11365842/savannahnow.com/rentals'},
                                       {'thebootandjetstream\.com': '/11365842/thebootandjetstream.com'},
-                                      {'legacy\.com': '/11365842/savannahnow.com/obits'}
+                                      {'legacy\.com': '/11365842/savannahnow.com/obits'},
+                                      {'lavozlatinaonline\.com': '/11365842/lavozlatinaonline.com'}
                               ];
 
         adunitPathMappings = [
@@ -187,7 +188,7 @@ adunitURLMappings.push({'\/subscriber-login': '/disable-ads-on-this-page'});
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201604250709:443265',
+            dfp_nmt_mapping_version: '201606160630:443265',
             dfp_nmt_ads_version: '201605121425:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
