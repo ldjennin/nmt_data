@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201605121425:443263
+ * @version: 201606170244:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,23 +37,28 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201510271445:443784
+ * mapping_version: 201605311704:443784
  */
 dfp_adunit_prefix = '/11365842/staugustine.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'autos.staugustine.com': '/11365842/autos.staugustine.com'},
-                                      {'saintaugustinecars.motominer.net': '/11365842/autos.staugustine.com'},
-                                      {'classifieds.staugustine.com': '/11365842/staugustine.com/classifieds'},
-                                      {'events.staugustine.com': '/11365842/staugustine.com/events'},
-                                      {'homes.staugustine.com': '/11365842/staugustine.com/homes'},
-                                      {'^m\.staugustine\.com': '/11365842/m.staugustine.com'},
-                                      {'^m\.pfsar': '/11365842/m.staugustine.com'},
-                                      {'jobs\.staugustine': '/11365842/jobs.staugustine.com'},
-                                      {'spotted\.': '/11365842/staugustine.com/photos'},
-                                      {'legacy\.com': '/11365842/staugustine.com/obituaries'}
-                              ];
+	{'autos.staugustine.com': '/11365842/autos.staugustine.com'},
+	{'beta.staugustine.com': '/11365842/msms.staugustine.com'},
+	{'classifieds.staugustine.com': '/11365842/staugustine.com/classifieds'},
+	{'dev.staugustine.com': '/11365842/msms.staugustine.com'},
+	{'classifieds.staugustine.com': '/11365842/staugustine.com/classifieds'},
+	{'events.staugustine.com': '/11365842/staugustine.com/events'},
+	{'homes.staugustine.com': '/11365842/staugustine.com/homes'},
+	{'jobs\.staugustine': '/11365842/jobs.staugustine.com'},
+	{'legacy\.com': '/11365842/staugustine.com/obituaries'},
+	{'prod.staugustine.com': '/11365842/msms.staugustine.com'},
+	{'qa.staugustine.com': '/11365842/msms.staugustine.com'},
+	{'saintaugustinecars.motominer.net': '/11365842/autos.staugustine.com'},
+	{'spotted\.': '/11365842/staugustine.com/photos'},
+	{'^m\.pfsar': '/11365842/m.staugustine.com'},
+	{'^m\.staugustine\.com': '/11365842/m.staugustine.com'}
+];
         adunitPathMappings = [
                               // MBU custom mappings
                               {'^\/ap\/national$': '/news/nationalnews'},
@@ -165,8 +170,8 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201510271445:443784',
-            dfp_nmt_ads_version: '201605121425:443263',
+            dfp_nmt_mapping_version: '201605311704:443784',
+            dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)

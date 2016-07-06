@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201605121425:443263
+ * @version: 201606170244:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,20 +37,23 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201310231359:443792
+ * mapping_version: 201607061419:443792
  */
 dfp_adunit_prefix = '/11365842/blufftontoday.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
+                                      {'beauforttoday\.com': '/11365842/blufftontoday.com/beauforttoday'},
                                       {'classifieds\.blufftontoday\.com': '/11365842/blufftontoday.com/classifieds'},
+                                      {'dev\.beauforttoday\.com': '/11365842/blufftontoday.com/beauforttoday'},
                                       {'events\.blufftontoday\.com': '/11365842/blufftontoday.com/events'},
                                       {'homes\.blufftontoday\.com': '/11365842/blufftontoday.com/homes'},
                                       {'jobs\.blufftontoday': '/11365842/blufftontoday.com/jobs'},
-                                      {'^m\.blufftontoday\.com': '/11365842/m.blufftontoday.com'},
-                                      {'^m\.pfblf': '/11365842/m.blufftontoday.com'},
+                                      {'legacy\.com': '/11365842/blufftontoday.com/obituaries'},
+                                      {'prod\.beauforttoday\.com': '/11365842/blufftontoday.com/beauforttoday'},
                                       {'spotted\.blufftontoday\.com': '/11365842/blufftontoday.com/photos'},
-                                      {'legacy\.com': '/11365842/blufftontoday.com/obituaries'}
+                                      {'^m\.blufftontoday\.com': '/11365842/m.blufftontoday.com'},
+                                      {'^m\.pfblf': '/11365842/m.blufftontoday.com'}
                               ];
 /***
  * common mappings: 201504241333:447642
@@ -151,8 +154,8 @@ dfp_adunit_prefix = '/11365842/blufftontoday.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201310231359:443792',
-            dfp_nmt_ads_version: '201605121425:443263',
+            dfp_nmt_mapping_version: '201607061419:443792',
+            dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
