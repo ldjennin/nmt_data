@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201605311703:443786
+ * mapping_version: 201608240231:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         adunitPrefixDomainMappings = [
@@ -69,6 +69,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
 	{'qa\.chronicle\.augusta\.com': '/11365842/msms.chronicle.augusta.com'},
 	{'rentals\.augusta\.com': '/11365842/chronicle.augusta.com/rentals'},
 	{'spotted\.augusta\.com': '/11365842/chronicle.augusta.com/spotted'},
+	{'chronicleprepzone\.com': '/11365842/chronicle.augusta.com/chronicleprepzone'},
 	{'www\.augusta\.com': '/11365842/augusta.com'},
 	{'\.hamptoncountyguardian\.com': '/11365842/chronicle.augusta.com/hamptoncountyguardian'},
 	{'\.sylvaniatelephone\.com': '/11365842/chronicle.augusta.com/sylvaniatelephone'},
@@ -176,7 +177,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201605311703:443786',
+            dfp_nmt_mapping_version: '201608240231:443786',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
