@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201605311704:443784
+ * mapping_version: 201608121501:443784
  */
 dfp_adunit_prefix = '/11365842/staugustine.com';
         adunitPrefixDomainMappings = [
@@ -55,6 +55,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
 	{'prod.staugustine.com': '/11365842/msms.staugustine.com'},
 	{'qa.staugustine.com': '/11365842/msms.staugustine.com'},
 	{'saintaugustinecars.motominer.net': '/11365842/autos.staugustine.com'},
+	{'sjcpreps.com': '/11365842/staugustine.com/sjcpreps'},
 	{'spotted\.': '/11365842/staugustine.com/photos'},
 	{'^m\.pfsar': '/11365842/m.staugustine.com'},
 	{'^m\.staugustine\.com': '/11365842/m.staugustine.com'}
@@ -170,7 +171,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201605311704:443784',
+            dfp_nmt_mapping_version: '201608121501:443784',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

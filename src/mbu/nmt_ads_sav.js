@@ -37,40 +37,41 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201606301542:443265
+ * mapping_version: 201608121635:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
                                       // MBU custom mappings
-                                      {'msms\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
-                                      {'dev\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
-                                      {'qa\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
                                       {'autos\.coastalautos\.com': '/11365842/savannahnow.com/autos'},
                                       {'bis\.yelvington\.com': '/11365842/businessinsavannah.com'},
                                       {'businessinsavannah\.com': '/11365842/businessinsavannah.com'},
                                       {'classifieds\.savannahnow\.com': '/11365842/savannahnow.com/classifieds'},
                                       {'class\.savannahnow\.com': '/11365842/savannahnow.com/classifieds'},
                                       {'coastalmommies\.com': '/11365842/coastalmommies.com'},
-                                      {'^dining\.savannahnow\.com': '/11365842/savannahnow.com/diningguide'},
+                                      {'dev\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
                                       {'dosavannah\.com': '/11365842/savannahnow.com/entertainment'},
                                       {'events\.savannahnow\.com': '/11365842/savannahnow.com/events'},
                                       {'giftguide\.': '/11365842/giftguide.savannahnow.com'},
                                       {'health\.': '/11365842/savannahnow.com/health'},
-                                      {'physicianguide\.': '/11365842/savannahnow.com/physicianguide'},
-                                      {'^m\.savannahnow\.com': '/11365842/m.savannahnow.com'},
-                                      {'^m\.pfsav': '/11365842/m.savannahnow.com'},
-                                      {'^www\.jaspersuntimes\.com': '/11365842/savannahnow.com/jaspersuntimes'},
                                       {'jaspercountysun\.com': '/11365842/savannahnow.com/jaspersuntimes'},
                                       {'jobs\.savannahnow\.com': '/11365842/savannahnow.com/jobs'},
+                                      {'lavozlatinaonline\.com': '/11365842/lavozlatinaonline.com'},
+                                      {'legacy\.com': '/11365842/savannahnow.com/obits'},
+                                      {'msms\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
+                                      {'myprepcentral\.com': '/11365842/savannahnow.com/myprepcentral'},
+                                      {'physicianguide\.': '/11365842/savannahnow.com/physicianguide'},
+                                      {'qa\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
+                                      {'rentals\.savannahnow\.com': '/11365842/savannahnow.com/rentals'},
                                       {'savannahhomesforsale\.com': '/11365842/savannahhomesforsale.com'},
-                                      {'weddings\.savannahmagazine\.com': '/11365842/savannahmagazine.com/weddings'},
                                       {'savannahmagazine\.com': '/11365842/savannahmagazine.com'},
                                       {'spotted\.savannahnow\.com': '/11365842/savannahnow.com/spotted'},
-                                      {'rentals\.savannahnow\.com': '/11365842/savannahnow.com/rentals'},
                                       {'thebootandjetstream\.com': '/11365842/thebootandjetstream.com'},
-                                      {'legacy\.com': '/11365842/savannahnow.com/obits'},
-                                      {'lavozlatinaonline\.com': '/11365842/lavozlatinaonline.com'}
+                                      {'weddings\.savannahmagazine\.com': '/11365842/savannahmagazine.com/weddings'},
+                                      {'^dining\.savannahnow\.com': '/11365842/savannahnow.com/diningguide'},
+                                      {'^m\.pfsav': '/11365842/m.savannahnow.com'},
+                                      {'^m\.savannahnow\.com': '/11365842/m.savannahnow.com'},
+                                      {'^www\.jaspersuntimes\.com': '/11365842/savannahnow.com/jaspersuntimes'}
                               ];
 
         adunitPathMappings = [
@@ -190,7 +191,7 @@ adunitURLMappings.push({'\/subscriber-login': '/disable-ads-on-this-page'});
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201606301542:443265',
+            dfp_nmt_mapping_version: '201608121635:443265',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

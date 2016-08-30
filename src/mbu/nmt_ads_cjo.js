@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201511131425:443787
+ * mapping_version: 201608301226:443787
  */
 dfp_adunit_prefix = '/11365842/cjonline.com';
         adunitPrefixDomainMappings = [
@@ -49,12 +49,14 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
                                       {'events\.cjonline\.com': '/11365842/cjonline.com/events'},
                                       {'flicks\.topeka\.net': '/11365842/cjonline.com/flickstopeka'},
                                       {'food\.topeka\.net': '/11365842/cjonline.com/foodtopeka'},
+                                      {'highschoolsports\.cjonline\.com': '/11365842/cjonline.com/prepzone.com'},
                                       {'holyground\.topeka\.net': '/11365842/cjonline.com/holyshoottopeka'},
                                       {'homes\.cjonline\.com': '/11365842/cjonline.com/homes'},
                                       {'jobs\.cjonline': '/11365842/jobs.cjonline.com'},
                                       {'legacy\.com': '/11365842/cjonline.com/obituaries'},
                                       {'^m\.cjonline\.com': '/11365842/m.cjonline.com'},
                                       {'^m\.pftop': '/11365842/m.cjonline.com'},
+                                      {'prepzone\.com': '/11365842/cjonline.com/prepzone.com'},
                                       {'rentals\.': '/11365842/cjonline.com/rentals'},
                                       {'nhra\.cjonline\.com': '/11365842/cjonline.com/nhra'},
                                       {'splash\.topeka\.net': '/11365842/cjonline.com/splashtopeka'},
@@ -163,7 +165,7 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201511131425:443787',
+            dfp_nmt_mapping_version: '201608301226:443787',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

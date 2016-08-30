@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201601191907:443762
+ * mapping_version: 201608121635:443762
  */
 dfp_adunit_prefix = '/11365842/onlineathens.com';
         adunitPrefixDomainMappings = [
@@ -48,6 +48,9 @@ dfp_adunit_prefix = '/11365842/onlineathens.com';
                                       {'autosathens.motominer.net': '/11365842/onlineathens.com/autos'},
                                       {'classifieds.onlineathens.com': '/11365842/onlineathens.com/classifieds'},
                                       {'events.onlineathens.com': '/11365842/onlineathens.com/events'},
+                                      {'gaprepzone.com': '/11365842/onlineathens.com/georgiaprepzone.com'},
+                                      {'georgiaprepzone.com': '/11365842/onlineathens.com/georgiaprepzone.com'},
+                                      {'highschoolsports.onlineathens.com': '/11365842/onlineathens.com/georgiaprepzone.com'},
                                       {'homes.onlineathens.com': '/11365842/onlineathens.com/homes'},
                                       {'jobs\.': '/11365842/onlineathens.com/jobs'},
                                       {'spotted\.': '/11365842/onlineathens.com/spotted'},
@@ -156,7 +159,7 @@ dfp_adunit_prefix = '/11365842/onlineathens.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201601191907:443762',
+            dfp_nmt_mapping_version: '201608121635:443762',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
