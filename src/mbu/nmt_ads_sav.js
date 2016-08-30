@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201608121635:443265
+ * mapping_version: 201608301312:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -54,12 +54,13 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'events\.savannahnow\.com': '/11365842/savannahnow.com/events'},
                                       {'giftguide\.': '/11365842/giftguide.savannahnow.com'},
                                       {'health\.': '/11365842/savannahnow.com/health'},
+                                      {'highschoolsports\.savannahnow\.com': '/11365842/savannahnow.com/myprepcentral.com'},
                                       {'jaspercountysun\.com': '/11365842/savannahnow.com/jaspersuntimes'},
                                       {'jobs\.savannahnow\.com': '/11365842/savannahnow.com/jobs'},
                                       {'lavozlatinaonline\.com': '/11365842/lavozlatinaonline.com'},
                                       {'legacy\.com': '/11365842/savannahnow.com/obits'},
                                       {'msms\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
-                                      {'myprepcentral\.com': '/11365842/savannahnow.com/myprepcentral'},
+                                      {'myprepcentral\.com': '/11365842/savannahnow.com/myprepcentral.com'},
                                       {'physicianguide\.': '/11365842/savannahnow.com/physicianguide'},
                                       {'qa\.savannahnow\.com': '/11365842/msms.savannahnow.com'},
                                       {'rentals\.savannahnow\.com': '/11365842/savannahnow.com/rentals'},
@@ -191,7 +192,7 @@ adunitURLMappings.push({'\/subscriber-login': '/disable-ads-on-this-page'});
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201608121635:443265',
+            dfp_nmt_mapping_version: '201608301312:443265',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

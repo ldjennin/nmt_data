@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201608121455:444002
+ * mapping_version: 201608301301:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com';
         adunitPrefixDomainMappings = [
@@ -50,7 +50,8 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                                       {'classifieds\.jacksonville.com': '/11365842/jacksonville.com/classifieds'},
                                       {'dev\.jacksonville\.com': '/11365842/msms.jacksonville.com'},
                                       {'events\.jacksonville.com': '/11365842/jacksonville.com/events'},
-                                      {'firstcoastvarsity.com': '/11365842/jacksonville.com/firstcoastvarsity'},
+                                      {'firstcoastvarsity.com': '/11365842/jacksonville.com/firstcoastvarsity.com'},
+                                      {'highschoolsports\.jacksonville\.com': '/11365842/jacksonville.com/firstcoastvarsity.com'},
                                       {'homes\.jacksonville.com': '/11365842/jacksonville.com/homes'},
                                       {'jaxairnews': '/11365842/jaxairnews.com'},
                                       {'jobs\.': '/11365842/jacksonville.com/jobs'},
@@ -208,7 +209,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201608121455:444002',
+            dfp_nmt_mapping_version: '201608301301:444002',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

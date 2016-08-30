@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201511301233:443788
+ * mapping_version: 201608301258:443788
  */
 dfp_adunit_prefix = '/11365842/thecabin.net';
         adunitPrefixDomainMappings = [
@@ -51,9 +51,11 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
                                       {'faulknercountybooked\.com': '/11365842/thecabin.net/faulknercountybooked'},
                                       {'faulknercountybusinessjournal\.com': '/11365842/thecabin.net/faulknercountybusinessjournal'},
                                       {'goconway\.com': '/11365842/thecabin.net/goconway'},
+                                      {'highschoolsports\.thecabin\.net': '/11365842/thecabin.net/lcdvarsity.com'},
                                       {'homes\.thecabin\.net': '/11365842/thecabin.net/homes'},
                                       {'inconway\.com': '/11365842/thecabin.net/inconway'},
                                       {'jobs\.thecabin': '/11365842/thecabin.net/jobs'},
+                                      {'lcdvarsity\.com': '/11365842/thecabin.net/lcdvarsity.com'},
                                       {'^m\.thecabin\.net': '/11365842/m.thecabin.net'},
                                       {'^m\.pfbra': '/11365842/m.thecabin.net'},
                                       {'rentals\.thecabin\.net': '/11365842/thecabin.net/rentals'},
@@ -160,7 +162,7 @@ dfp_adunit_prefix = '/11365842/thecabin.net';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201511301233:443788',
+            dfp_nmt_mapping_version: '201608301258:443788',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
