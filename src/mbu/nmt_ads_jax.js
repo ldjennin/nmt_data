@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201608301301:444002
+ * mapping_version: 201608311451:444002
  */
 dfp_adunit_prefix = '/11365842/jacksonville.com';
         adunitPrefixDomainMappings = [
@@ -209,7 +209,7 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201608301301:444002',
+            dfp_nmt_mapping_version: '201608311451:444002',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
