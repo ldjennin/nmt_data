@@ -67,8 +67,11 @@ dfp_adunit_prefix = '/11365842/cjonline.com';
         adunitPathMappings.push({'^\/realestate\/': '/homes'});
         adunitURLMappings.push({'legacy\.com\/celebration\/': '/celebrations'});
 /***
- * common mappings: 201504241333:447642
+ * common mappings: 201610241533:447642
  */
+
+        if (typeof data.getQueryParam('name') !== "undefined" || typeof data.getQueryParam('email') !== "undefined" || typeof data.getQueryParam('email1') !== "undefined") { adunitURLMappings.push({'': '/user'}); }
+
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
         adunitPathMappings.push({'^\/home$': '/homepage'});
