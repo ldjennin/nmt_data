@@ -56,10 +56,13 @@ dfp_adunit_prefix = '/11365842/blufftontoday.com';
                                       {'^m\.pfblf': '/11365842/m.blufftontoday.com'}
                               ];
 /***
- * common mappings: 201610241533:447642
+ * common mappings: 201611011635:447642
  */
 
         if (typeof data.getQueryParam('name') !== "undefined" || typeof data.getQueryParam('email') !== "undefined" || typeof data.getQueryParam('email1') !== "undefined") { adunitURLMappings.push({'': '/user'}); }
+        adunitURLMappings.push({'email': '/user'});
+        adunitURLMappings.push({'username': '/user'});
+        adunitURLMappings.push({'user_login': '/user'});
 
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
