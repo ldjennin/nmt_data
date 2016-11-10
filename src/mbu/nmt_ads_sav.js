@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201609011244:443265
+ * mapping_version: 201611100117:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -72,7 +72,8 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'^dining\.savannahnow\.com': '/11365842/savannahnow.com/diningguide'},
                                       {'^m\.pfsav': '/11365842/m.savannahnow.com'},
                                       {'^m\.savannahnow\.com': '/11365842/m.savannahnow.com'},
-                                      {'^www\.jaspersuntimes\.com': '/11365842/savannahnow.com/jaspersuntimes'}
+                                      {'^www\.jaspersuntimes\.com': '/11365842/savannahnow.com/jaspersuntimes'},
+                                      {'know\.savannahnow\.com': '/11365842/savannahnow.com/know'}
                               ];
 
         adunitPathMappings = [
@@ -198,7 +199,7 @@ adunitURLMappings.push({'\/subscriber-login': '/disable-ads-on-this-page'});
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201609011244:443265',
+            dfp_nmt_mapping_version: '201611100117:443265',
             dfp_nmt_ads_version: '201606170244:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
