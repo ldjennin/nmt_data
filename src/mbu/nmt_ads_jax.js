@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201606170244:443263
+ * @version: 201611231527:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,8 +37,9 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201608311451:444002
+ * mapping_version: 201611231506:444002
  */
+dfp_default_adunit_prefix = '/11365842/jacksonville.com';
 dfp_adunit_prefix = '/11365842/jacksonville.com';
         adunitPrefixDomainMappings = [
                                       // These mappings will do a contains match against domain host.
@@ -111,13 +112,20 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
                            {'^\/news\/blog$': 'xfinity'}
                    ];
 /***
- * common mappings: 201611011635:447642
+ * common mappings: 201612121442:447642
  */
 
-        if (typeof data.getQueryParam('name') !== "undefined" || typeof data.getQueryParam('email') !== "undefined" || typeof data.getQueryParam('email1') !== "undefined") { adunitURLMappings.push({'': '/user'}); }
-        adunitURLMappings.push({'email': '/user'});
-        adunitURLMappings.push({'username': '/user'});
-        adunitURLMappings.push({'user_login': '/user'});
+        if ((typeof data.getQueryParam('name') !== "undefined" && data.getQueryParam('name').indexOf('@') > 0) || typeof data.getQueryParam('email') !== "undefined" || typeof data.getQueryParam('email1') !== "undefined" || typeof data.getQueryParam('cm_lm') !== "undefined") {
+			adunitURLMappings.unshift({'': '/user'});
+			adunitPrefixDomainMappings.unshift({'': "/0000/PII"});
+        } else {
+			adunitURLMappings.unshift({'email': '/user'});
+			adunitPrefixURLMappings.unshift({'email': "/0000/PII"});
+			adunitURLMappings.unshift({'username': '/user'});
+			adunitPrefixURLMappings.unshift({'username': "/0000/PII"});
+			adunitURLMappings.unshift({'user_login': '/user'});
+			adunitPrefixURLMappings.unshift({'user_login': "/0000/PII"});
+		}
 
         adunitURLMappings.push({'\.adpay\.com': '/classifieds'});
 
@@ -215,8 +223,8 @@ dfp_adunit_prefix = '/11365842/jacksonville.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201608311451:444002',
-            dfp_nmt_ads_version: '201606170244:443263',
+            dfp_nmt_mapping_version: '201611231506:444002',
+            dfp_nmt_ads_version: '201611231527:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
