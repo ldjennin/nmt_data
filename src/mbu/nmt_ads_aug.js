@@ -79,10 +79,10 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
 	{'^m\.pfaug': '/11365842/m.chronicle.augusta.com'}
 ];
 /***
- * common mappings: 201612121442:447642
+ * common mappings: 201701031714:447642
  */
 
-        if ((typeof data.getQueryParam('name') !== "undefined" && data.getQueryParam('name').indexOf('@') > 0) || typeof data.getQueryParam('email') !== "undefined" || typeof data.getQueryParam('email1') !== "undefined" || typeof data.getQueryParam('cm_lm') !== "undefined") {
+        if ((typeof data.getQueryParam('name') !== "undefined" && data.getQueryParam('name').indexOf('@') > 0) || (typeof data.getQueryParam('eid') !== "undefined" && data.getQueryParam('eid').indexOf('@') > 0) || typeof data.getQueryParam('email') !== "undefined" || typeof data.getQueryParam('email1') !== "undefined" || typeof data.getQueryParam('cm_lm') !== "undefined") {
 			adunitURLMappings.unshift({'': '/user'});
 			adunitPrefixDomainMappings.unshift({'': "/0000/PII"});
         } else {
