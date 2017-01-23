@@ -2,7 +2,7 @@
 /***
  * Provides data and methods for serving ads.
  * @author: Duane.Jennings@niit-mediatech.com
- * @version: 201611231527:443263
+ * @version: 201701111420:443263
  * 
  */
 var NMTdata = NMTdata || {};
@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201611100117:443265
+ * mapping_version: 201701231514:443265
  */
 dfp_adunit_prefix = '/11365842/savannahnow.com';
         adunitPrefixDomainMappings = [
@@ -55,6 +55,7 @@ dfp_adunit_prefix = '/11365842/savannahnow.com';
                                       {'giftguide\.': '/11365842/giftguide.savannahnow.com'},
                                       {'health\.': '/11365842/savannahnow.com/health'},
                                       {'highschoolsports\.savannahnow\.com': '/11365842/savannahnow.com/myprepcentral.com'},
+                                      {'homes\.': '/11365842/savannahnow.com/homes'},
                                       {'jaspercountysun\.com': '/11365842/savannahnow.com/jaspersuntimes'},
                                       {'jobs\.savannahnow\.com': '/11365842/savannahnow.com/jobs'},
                                       {'lavozlatinaonline\.com': '/11365842/lavozlatinaonline.com'},
@@ -206,8 +207,8 @@ adunitURLMappings.push({'\/subscriber-login': '/disable-ads-on-this-page'});
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201611100117:443265',
-            dfp_nmt_ads_version: '201611231527:443263',
+            dfp_nmt_mapping_version: '201701231514:443265',
+            dfp_nmt_ads_version: '201701111420:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
             dfp_ccc: data.escapeHtml(dfp_ccc)
