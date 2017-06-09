@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201702230943:443786
+ * mapping_version: 201706091038:443786
  */
 dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         adunitPrefixDomainMappings = [
@@ -81,6 +81,8 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
 	{'^m\.chronicle\.augusta\.com': '/11365842/m.chronicle.augusta.com'},
 	{'^m\.pfaug': '/11365842/m.chronicle.augusta.com'}
 ];
+
+adunitPrefixURLMappings.push({'\/liv_13257.shtml': '/00000000/null'});
 /***
  * common mappings: 201701111102:447642
  */
@@ -193,7 +195,7 @@ dfp_adunit_prefix = '/11365842/chronicle.augusta.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201702230943:443786',
+            dfp_nmt_mapping_version: '201706091038:443786',
             dfp_nmt_ads_version: '201701111420:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,

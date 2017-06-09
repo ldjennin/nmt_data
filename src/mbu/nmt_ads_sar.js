@@ -37,7 +37,7 @@ var NMTdata = NMTdata || {};
 
 ////////////////////////////////////////////////////////////////////////
 /***
- * mapping_version: 201608301300:443784
+ * mapping_version: 201704241210:443784
  */
 dfp_adunit_prefix = '/11365842/staugustine.com';
         adunitPrefixDomainMappings = [
@@ -54,7 +54,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
 	{'jobs\.staugustine': '/11365842/jobs.staugustine.com'},
 	{'legacy\.com': '/11365842/staugustine.com/obituaries'},
 	{'prod.staugustine.com': '/11365842/msms.staugustine.com'},
-	{'qa.staugustine.com': '/11365842/msms.staugustine.com'},
+	{'qa.staugustine.com': '/11365842/staugustine.com'},
 	{'saintaugustinecars.motominer.net': '/11365842/autos.staugustine.com'},
 	{'sjcpreps.com': '/11365842/staugustine.com/sjcpreps'},
 	{'spotted\.': '/11365842/staugustine.com/photos'},
@@ -185,7 +185,7 @@ dfp_adunit_prefix = '/11365842/staugustine.com';
         }
 
         return { // return object
-            dfp_nmt_mapping_version: '201608301300:443784',
+            dfp_nmt_mapping_version: '201704241210:443784',
             dfp_nmt_ads_version: '201701111420:443263',
             dfp_adunit_prefix: dfp_adunit_prefix,
             dfp_adunit: dfp_adunit,
